@@ -1302,3 +1302,13 @@ Processing by MoviesController#index as HTML
   [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
   Rendered movies/index.html.haml within layouts/application (33.5ms)
 Completed 200 OK in 82ms (Views: 54.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/rails.png" for 165.91.13.18 at 2018-10-21 22:34:14 +0000
+
+
+Started GET "/movies" for 165.91.13.18 at 2018-10-21 22:34:18 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (16.9ms)
+Completed 200 OK in 65ms (Views: 36.5ms | ActiveRecord: 3.1ms)
