@@ -190,7 +190,7 @@ DEPENDENCIES
   haml
   jquery-rails
   launchy
-  pg (~> 0.21)
+  pg
   rails (= 4.2.10)
   rspec-rails (= 3.7.2)
   sass-rails (~> 5.0.3)
