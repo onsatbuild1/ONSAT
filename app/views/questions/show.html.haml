@@ -1,0 +1,25 @@
+-# in app/views/questions/show.html.haml
+
+%h2 Details about #{@question.keyword}
+
+%ul#details
+  %li
+    Question Keyword:
+    = @question.keyword
+  //%li
+  //  Question Index:
+  //  = @question.index
+  %li
+    Question Weight:
+    = @question.weight
+  %li
+    Question Answer:
+    = @question.answer
+
+%h3 Description:
+
+%p#description= @question.description
+
+= link_to 'Edit', edit_question_path(@question)
+= button_to 'Delete', question_path(@question), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to questions list', questions_path

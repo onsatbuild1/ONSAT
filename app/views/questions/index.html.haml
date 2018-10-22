@@ -1,0 +1,28 @@
+-#  This file is app/views/questions/index.html.haml
+%h1 All Questions
+
+= form_tag questions_path, :method => :get do
+  = hidden_field_tag "keyword_sort", true if @keyword_header
+  //= hidden_field_tag ":release_date_sort", true if @date_header
+  //Include: 
+  //- @all_ratings.each do |rating|
+  //  = rating
+  //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
+  //= submit_tag 'Refresh', :id => 'ratings_submit'
+
+%table#questions
+  %thead
+    %tr
+      %th{:class => @keyword_header}= link_to 'Question Keyword', questions_path(:sort => 'keyword'), :id => 'keyword_header'
+      %th{:class => @answer_header}= link_to 'Answer Score', questions_path(:sort => 'answer'), :id => 'answer_header'
+      %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
+      %th More Info
+  %tdescription
+    - @questions.each do |question|
+      %tr
+        %td= question.keyword
+        %td= question.answer
+        %td= question.weight
+        %td= link_to "More about #{question.keyword}", question_path(question)
+
+= link_to 'Add new question', new_question_path

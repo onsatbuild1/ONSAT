@@ -101,16 +101,16 @@ with a IRB prompt in the server window. Here you can do things like:
 
   >> @posts.inspect
   => "[#<Post:0x14a6be8
-          @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>,
+          @attributes={"title"=>nil, "description"=>nil, "id"=>"1"}>,
        #<Post:0x14a6620
-          @attributes={"title"=>"Rails", "body"=>"Only ten..", "id"=>"2"}>]"
+          @attributes={"title"=>"Rails", "description"=>"Only ten..", "id"=>"2"}>]"
   >> @posts.first.title = "hello from a debugger"
   => "hello from a debugger"
 
 ...and even better, you can examine how your runtime objects actually work:
 
   >> f = @posts.first
-  => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
+  => #<Post:0x13630c4 @attributes={"title"=>nil, "description"=>nil, "id"=>"1"}>
   >> f.
   Display all 152 possibilities? (y or n)
 

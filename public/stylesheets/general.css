@@ -1,4 +1,4 @@
-html, body {
+html, description {
   margin: 0;
   padding: 0;
   background: White;
@@ -55,7 +55,7 @@ em {
   font-weight: bold;
   font-style: normal;
 }
-div#body {
+div#description {
   margin: 0;
   padding: 0 20px 20px;
 }

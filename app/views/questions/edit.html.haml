@@ -1,0 +1,22 @@
+-# edit.html.haml using partial
+
+%h1 Edit Existing Question
+
+= form_tag question_path(@question), :method => :put do
+
+  = label :question, :keyword, 'Keyword'
+  = text_field :question, 'keyword'
+
+  //= label :question, :index, 'Index'
+  //= text_field :question, 'index'
+  
+  = label :question, :description, 'Description'
+  = text_field :question, 'description'
+  
+  = label :question, :answer, 'Answer'
+  = text_field :question, 'answer'
+  
+  = label :question, :weight, 'Weight'
+  = text_field :question, 'weight'
+
+  = submit_tag 'Update Question Info'

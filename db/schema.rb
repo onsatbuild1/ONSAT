@@ -13,14 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20111119180638) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.datetime "release_date"
+  create_table "questions", force: :cascade do |t|
+    t.integer  "index"
+    t.string   "keyword"
+    t.string   "description"
+    t.integer  "answer"
+    t.float    "weight"
+    t.integer  "category_id"
+    t.string   "criteria"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

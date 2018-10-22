@@ -1,0 +1,20 @@
+%h1 Create New Question
+
+= form_tag questions_path do
+
+  = label :question, :keyword, 'Keyword'
+  = text_field :question, 'keyword'
+
+  //= label :question, :index, 'Index'
+  //= text_field :question, 'index'
+  
+  = label :question, :description, 'Description'
+  = text_field :question, 'description'
+  
+  = label :question, :answer, 'Answer'
+  = text_field :question, 'answer'
+  
+  = label :question, :weight, 'Weight'
+  = text_field :question, 'weight'
+
+  = submit_tag 'Save Changes'

@@ -1,4 +1,4 @@
-html, body {
+html, description {
   margin: 0;
   padding: 0;
   background: White;
@@ -27,28 +27,28 @@ h1 {
 h1.title {
   margin: 0 0 1em;
   padding: 10px;
-  background-color: orange;
+  background-color: #500000;
   color: white;
   border-bottom: 4px solid gold;
   font-size: 2em;
   font-style: normal;
 }
-table#movies {
+table#questions {
   margin: 10px;
   border-collapse: collapse;
   width: 100%;
   border-bottom: 2px solid black;
 }
-table#movies th {
+table#questions th {
   border: 2px solid white;
   font-weight: bold;
   background-color: wheat;
 }
-table#movies th, table#movies td {
+table#questions th, table#questions td {
   padding: 4px;
   text-align: left;
 }
-table#movies th.hilite {
+table#questions th.hilite {
   background-color: yellow;
 }
 #notice #warning {

@@ -1,13 +1,13 @@
 !!! 5
 %html
   %head
-    %title Rotten Potatoes!
+    %title 
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
-  %body
-    %h1.title Rotten Potatoes!
+  %description
+    %h1.title Outsourcing of Network Services Assessment Tool
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
