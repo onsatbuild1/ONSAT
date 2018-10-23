@@ -10,6 +10,8 @@
   //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
   //= submit_tag 'Refresh', :id => 'ratings_submit'
 
+
+  
 %table#questions
   %thead
     %tr
@@ -27,7 +29,6 @@
 
 = link_to 'Add new question', new_question_path
 
-%h2 Upload
-= form_tag upload_forms_path, multipart: true do
+= form_tag upload_questions_path, multipart: true do
   = file_field_tag :file
   = submit_tag "Upload"
