@@ -29,8 +29,8 @@
 
 = link_to 'Add new question', new_question_path
 
-// %h2 Upload
+%h2 Upload
 
-// = form_tag upload_questions_path, multipart: true do
-//   = file_field_tag :file
-//   = submit_tag "Upload"
+= form_tag upload_questions_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Upload"
