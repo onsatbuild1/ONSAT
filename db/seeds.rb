@@ -8,7 +8,7 @@
 
 questions = [{:keyword => 'Finance', :index => 1, :answer => 5, :weight => 0.5, :description => 'Example Question'},
     	  {:keyword => 'Security', :index => 2, :answer => 2, :weight => 2.0, :description => 'Example Question'},
-    	  {:keyword => 'History', :index => 3, :answer => 5, :weight => 2.5, :description => 'Example Question'},
+    	  {:keyword => 'History', :index => 3, :answer => 3, :weight => 2.5, :description => 'Example Question'},
       	  {:keyword => 'Location', :index => 4, :answer => 6, :weight => 2.0, :description => 'Example Question'},
   	 ]
 
