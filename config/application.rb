@@ -8,6 +8,7 @@ require File.expand_path('../boot', __FILE__)
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 require "rails/all"
+require 'csv'   # Jee 10/22
 
 Bundler.require(:default, Rails.env)
 

@@ -64,5 +64,10 @@ class QuestionsController < ApplicationController
     flash[:notice] = "Question '#{@question.keyword}' deleted."
     redirect_to questions_path
   end
+  
+  def upload
+    Question.upload(params[:file])
+    redirect_to root_url, notice: "Upload complete"
+  end
 
 end
