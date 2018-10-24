@@ -1,5 +1,4 @@
 class Question < ActiveRecord::Base
-    # attr_accessible :keyword, :answer, :weight, :index
     
     
     def self.upload(file)
