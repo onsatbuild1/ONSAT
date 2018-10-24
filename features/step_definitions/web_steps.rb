@@ -47,12 +47,18 @@ Then /^I should see the page of questions listed$/ do
   assert_selector "td", text: "SERVICE PROVIDER IDENTIFICATION"
 end
 
+# disable button
+Then(/^the "([^"]*)" button should be disabled$/) do |arg1|
+  attributes = field_labeled(label).element.attributes.keys
+  attributes.send(negate ? :should_not : :should, include('disabled'))
+end
+
 
 When /^I do not choose a file but press upload$/ do
   click_button "Upload"
 end
 
-Then /^The page should stay the same$/ do
+Then /^the page should stay the same$/ do
   assert_selector "a", text: "Question Keyword"
   expect(page).to have_no_content("SERVICE PROVIDER IDENTIFICATION") #untested
 end
