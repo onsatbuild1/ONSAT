@@ -23,7 +23,7 @@
     - @questions.each do |question|
       %tr
         %td= question.keyword
-        %td= question.answer
+        %td= select :question, :level, ['0','1','2','3','4', '5', '6']
         %td= question.weight
         %td= link_to "More about #{question.keyword}", question_path(question)
 
