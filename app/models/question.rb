@@ -1,12 +1,12 @@
 class Question < ActiveRecord::Base
+    attr_accessible :keyword, :index, :answer, :weight
     
     
     def self.upload(file)
         CSV.foreach(file.path, headers: true) do |row|
-            Question.create! row.to_hash
-            # question = find_by_id(row["index"]) || new
-            # question.attributes = row.to_hash.slice(*accessible_attributes)
-            # product.save!
+            question = find_by_id(row["index"]) || new
+            question.attributes = row.to_hash.slice(*accessible_attributes)
+            product.save!
         end
     end
 end
