@@ -70,4 +70,4 @@ class QuestionsController < ApplicationController
     redirect_to root_url, notice: "Upload complete"
   end
 
-end
+end 
