@@ -10,22 +10,31 @@
   //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
   //= submit_tag 'Refresh', :id => 'ratings_submit'
 
+- @categories.each do |category|
+  .accordion{:id => "accordionExample"}
+    .card
+      .card-header{:id => "headingOne"}
+        %h5.mb-0
+          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category[0]}", "aria-expanded" => "false", "aria-controls" => "collapseOne"}
+            #{category[1]}
+      .collapse.show{:id => "collapse#{category[0]}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
+        .card-body
+          %table#questions
+            %thead
+              %tr
+                %th{:class => @keyword_header}= link_to 'Question Keyword', questions_path(:sort => 'keyword'), :id => 'keyword_header'
+                %th Answer Score
+                %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
+                %th More Info
+            %tdescription
+              - @category_questions[category[0]].each do |question|
+                %tr
+                  %td= question.keyword
+                  %td= select :question, :level, ['0','1','2','3','4', '5', '6']
+                  //%td= question.weight
+                  %td= link_to "More about #{question.keyword}", question_path(question)
 
-  
-%table#questions
-  %thead
-    %tr
-      %th{:class => @keyword_header}= link_to 'Question Keyword', questions_path(:sort => 'keyword'), :id => 'keyword_header'
-      %th{:class => @answer_header}= link_to 'Answer Score', questions_path(:sort => 'answer'), :id => 'answer_header'
-      %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
-      %th More Info
-  %tdescription
-    - @questions.each do |question|
-      %tr
-        %td= question.keyword
-        %td= select :question, :level, ['0','1','2','3','4', '5', '6']
-        %td= question.weight
-        %td= link_to "More about #{question.keyword}", question_path(question)
+
 
 = link_to 'Add new question', new_question_path
 

@@ -6,10 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-questions = [{:keyword => 'Finance', :index => 1, :answer => 5, :weight => 0.5, :description => 'Example Question'},
-    	  {:keyword => 'Security', :index => 2, :answer => 2, :weight => 2.0, :description => 'Example Question'},
-    	  {:keyword => 'History', :index => 3, :answer => 3, :weight => 2.5, :description => 'Example Question'},
-      	  {:keyword => 'Location', :index => 4, :answer => 6, :weight => 2.0, :description => 'Example Question'},
+questions = [{:keyword => 'Finance Question', :index => 1, :category_id => 2, :answer => 5, :weight => 0.5, :description => 'Example Question'},
+    	  {:keyword => 'Security Question', :index => 2, :category_id => 1, :answer => 2, :weight => 2.0, :description => 'Example Question'},
+    	  {:keyword => 'Business Question', :index => 3, :category_id => 2, :answer => 3, :weight => 2.5, :description => 'Example Question'},
   	 ]
 
 questions.each do |question|

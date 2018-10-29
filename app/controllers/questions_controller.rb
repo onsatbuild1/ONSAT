@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   
   def question_params
-    params.require(:question).permit(:keyword, :index, :weight, :description)
+    params.require(:question).permit(:keyword, :category_id, :index, :weight, :description)
   end
 
   def show
@@ -16,21 +16,15 @@ class QuestionsController < ApplicationController
     @formulae_nav_class = ''
     @output_nav_class = ''
     
+    @categories = {0 => 'Business', 1 => 'Security', 2 => 'Finance'}
+    
     sort = params[:sort] || session[:sort]
     case sort
     when 'keyword'
       ordering,@keyword_header = {:keyword => :asc}, 'hilite'
     when 'weight'
       ordering,@weight_header = {:weight => :desc}, 'hilite'
-    when 'answer'
-      ordering,@answer_header = {:answer => :desc}, 'hilite'
     end
-    #@all_ratings = Question.all_ratings
-    #@selected_ratings = params[:ratings] || session[:ratings] || {}
-    
-    #if @selected_ratings == {}
-    #  @selected_ratings = Hash[@all_ratings.map {|rating| [rating, rating]}]
-    #end
     
     
     if params[:sort] != session[:sort] or params[:ratings] != session[:ratings]
@@ -39,7 +33,10 @@ class QuestionsController < ApplicationController
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
     
-    @questions = Question.order(ordering)#(rating: @selected_ratings.keys).order(ordering)
+    @category_questions = []
+    @categories.each do |q_cat|
+      @category_questions[q_cat[0]] = Question.where(category_id: q_cat[0])
+    end
   end
 
   def new
