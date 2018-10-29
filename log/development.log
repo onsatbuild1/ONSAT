@@ -8755,3 +8755,30 @@ Processing by QuestionsController#index as HTML
   [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
   Rendered questions/index.html.haml within layouts/application (17.8ms)
 Completed 200 OK in 190ms (Views: 165.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 47.218.200.166 at 2018-10-29 09:59:38 +0000
+
+
+Started GET "/questions" for 47.218.200.166 at 2018-10-29 09:59:38 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 0]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1  [["category_id", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  Rendered questions/index.html.haml within layouts/application (17.5ms)
+Completed 200 OK in 198ms (Views: 167.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.self-5fa25fc776f3179272a0444b0e51f9acd4fbb899722fc5d1255a3e5ac7fd39bb.css?body=1" for 47.218.200.166 at 2018-10-29 09:59:38 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 47.218.200.166 at 2018-10-29 09:59:38 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 47.218.200.166 at 2018-10-29 09:59:38 +0000
+
+
+Started GET "/assets/bootstrap.self-eda30935e00eb14bbef51312d8711b57e74fc51ee0edc3af2a2e40f6ee4b1f32.js?body=1" for 47.218.200.166 at 2018-10-29 09:59:38 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 47.218.200.166 at 2018-10-29 09:59:38 +0000
