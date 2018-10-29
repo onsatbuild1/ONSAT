@@ -11,6 +11,11 @@ class QuestionsController < ApplicationController
   end
 
   def index
+    @home_nav_class = ''
+    @input_nav_class = 'active' # Input Tab
+    @formulae_nav_class = ''
+    @output_nav_class = ''
+    
     sort = params[:sort] || session[:sort]
     case sort
     when 'keyword'

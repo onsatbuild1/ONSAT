@@ -25,13 +25,14 @@ h1 {
   border-bottom: 1px solid DarkSlateGrey;
 }
 h1.title {
-  margin: 0 0 1em;
+  margin: 0 0 20px;
   padding: 10px;
   background-color: #500000;
   color: white;
   border-bottom: 4px solid gold;
   font-size: 2em;
   font-style: normal;
+  text-align: center;
 }
 table#questions {
   margin: 10px;
@@ -61,4 +62,33 @@ form label {
   line-height: 25px;
   font-weight: bold;
   color: maroon;
+}
+
+.NavBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #500000;
+  /* position: fixed; this fixes the NavBar */
+  top: 0;
+  width: 100%;
+}
+.NavBar li {
+    float: left;
+    width: 25%;
+}
+.NavBar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+.NavBar li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
 }
