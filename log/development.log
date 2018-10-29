@@ -4696,3 +4696,891 @@ Completed 200 OK in 235ms (Views: 188.6ms | ActiveRecord: 15.7ms)
 
 
 Started GET "/assets/application.self-4e5c7f9d54595bf2e0bf85734bec48562126aaac198573f994a627b35c651766.css?body=1" for 165.91.13.157 at 2018-10-24 00:36:59 +0000
+
+
+Started GET "/" for 165.91.13.254 at 2018-10-29 03:06:48 +0000
+
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (4.2.10) lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `initialize'
+  activerecord (4.2.10) lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `new'
+  activerecord (4.2.10) lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `connect'
+  activerecord (4.2.10) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+  activerecord (4.2.10) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+  activerecord (4.2.10) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  activerecord (4.2.10) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.10) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:51:in `restore_query_cache_settings'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:43:in `rescue in call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.5ms)
+
+
+Started GET "/" for 165.91.13.254 at 2018-10-29 03:07:06 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:07:07 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (2.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (26.4ms)
+Completed 200 OK in 243ms (Views: 203.0ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 165.91.13.254 at 2018-10-29 03:07:07 +0000
+
+
+Started GET "/assets/application.self-4e5c7f9d54595bf2e0bf85734bec48562126aaac198573f994a627b35c651766.css?body=1" for 165.91.13.254 at 2018-10-29 03:07:07 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 165.91.13.254 at 2018-10-29 03:07:07 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 165.91.13.254 at 2018-10-29 03:07:07 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:07:10 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:19:54 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:20:01 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:20:03 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:20:52 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:21:07 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:21:25 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:23:01 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-7633d11b12196a1c74addf7f25de9881662bc823f5f4edaab61da2e9370a3ec5.css?body=1" for 165.91.13.254 at 2018-10-29 03:23:01 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:24:24 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-4893da268a1a981bd467902372f63cf13c6b790f439fb7b74561630e7c3cc07c.css?body=1" for 165.91.13.254 at 2018-10-29 03:24:24 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:25:31 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-375e920b4a9bf681293c60a7bcb17881b090d9f3512c0e5f085a92050fc45638.css?body=1" for 165.91.13.254 at 2018-10-29 03:25:31 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:25:40 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ed82a450e11ef13b429c3a67ae272878379a0819b45fd677e0be5b5de1a13750.css?body=1" for 165.91.13.254 at 2018-10-29 03:25:40 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:25:55 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-dc1cc1f95c4639e642a5a7aea3648d124b8a004aa440f35d5b9207ee92544190.css?body=1" for 165.91.13.254 at 2018-10-29 03:25:55 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:26:17 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-37cd2c99516ba3ffb2ad1eea232dd45b809093ce257ef519f35d97667ce15151.css?body=1" for 165.91.13.254 at 2018-10-29 03:26:17 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:27:06 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-dde5c491b04efdc150df7ad4ae76e24c76f6d036ccfbfacb02d25d54a0cd68e6.css?body=1" for 165.91.13.254 at 2018-10-29 03:27:06 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:28:04 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-6fcae09d817257e37f5c73b8a89716d91a1c281dff72ebe7038d3890de67e1e3.css?body=1" for 165.91.13.254 at 2018-10-29 03:28:04 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:32:47 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/home/ec2-user/environment/ONSAT/ONSAT/app/views/layouts/application.html.haml:13: syntax error, unexpected tCONSTANT, expecting ')'
+ue_false((link_to href='' Home
+                              ^
+/home/ec2-user/environment/ONSAT/ONSAT/app/views/layouts/application.html.haml:14: syntax error, unexpected tCONSTANT, expecting ')'
+e_false((link_to href='' Input
+                              ^
+/home/ec2-user/environment/ONSAT/ONSAT/app/views/layouts/application.html.haml:15: syntax error, unexpected tCONSTANT, expecting ')'
+alse((link_to href='' Formulae
+                              ^
+/home/ec2-user/environment/ONSAT/ONSAT/app/views/layouts/application.html.haml:16: syntax error, unexpected tCONSTANT, expecting ')'
+_false((link_to href='' Output
+                              ^):
+  app/views/layouts/application.html.haml:13: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/layouts/application.html.haml:14: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/layouts/application.html.haml:15: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/layouts/application.html.haml:16: syntax error, unexpected tCONSTANT, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:34:30 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:34:35 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:34:36 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:34:37 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:34:39 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:35:37 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-0851de3b4c993455e67b76784666a5bdd4c592b44d653df8d738e6fb3e1c9fb0.css?body=1" for 165.91.13.254 at 2018-10-29 03:35:37 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:35:40 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:35:41 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:38:15 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-7d97b61cef0d3b354df7172e2d29341eaecbe08c6df3907b1f268c9265b50e76.css?body=1" for 165.91.13.254 at 2018-10-29 03:38:15 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:38:32 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-afacad016df414f9525242a93fe0bc7ccdcb72b39e77d7f0bd26ae7e2f4dc5eb.css?body=1" for 165.91.13.254 at 2018-10-29 03:38:33 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:39:16 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-14f4d2d5095bdc6b717c126236fea73e4e0aa51a24ee8233a85430a814eb1639.css?body=1" for 165.91.13.254 at 2018-10-29 03:39:16 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:39:32 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-83f1c82d72bc7993d64ec8fdc80f1e5397145436e4e1628b618df4aea11b0123.css?body=1" for 165.91.13.254 at 2018-10-29 03:39:32 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:39:39 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-2241f6b1969670b9a89aecccfd0df408d8b236274825ca3b2163f65ac861557b.css?body=1" for 165.91.13.254 at 2018-10-29 03:39:39 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:39:52 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-c614001ecdef5b1886001a5df752492a7d249cc27f8364f363ad2593f42ffcec.css?body=1" for 165.91.13.254 at 2018-10-29 03:39:53 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:40:07 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-d54abcf06391dcc46b0b358a2f1de3099172fe60daa481623271bedf6c467cd5.css?body=1" for 165.91.13.254 at 2018-10-29 03:40:07 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:41:00 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:41:06 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:41:07 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:41:08 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 03:53:47 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:00:55 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined local variable or method `home_path' for #<#<Class:0x00000004f97910>:0x00000004ecdd40>):
+    10:     %h1.title Outsourcing of Network Services Assessment Tool
+    11:     
+    12:     %ul{:class => 'NavBar'}
+    13:       %li{:class => @home_nav_class}= link_to "Home", home_path
+    14:       %li{:class => @input_nav_class}= link_to "Input", questions_path
+    15:       %li{:class => @formulae_nav_class}= link_to "Formulae", formulae_path
+    16:       %li{:class => @output_nav_class}= link_to "Output", output_path
+  app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__3884587815954251056_40848820'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.4ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:05:27 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"home"} missing required keys: [:id]):
+    10:     %h1.title Outsourcing of Network Services Assessment Tool
+    11:     
+    12:     %ul{:class => 'NavBar'}
+    13:       %li{:class => @home_nav_class}= link_to "Home", home_path
+    14:       %li{:class => @input_nav_class}= link_to "Input", questions_path
+    15:       %li{:class => @formulae_nav_class}= link_to "Formulae", formulae_path
+    16:       %li{:class => @output_nav_class}= link_to "Output", output_path
+  app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__3884587815954251056_40848820'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:08:50 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"home"} missing required keys: [:id]):
+    10:     %h1.title Outsourcing of Network Services Assessment Tool
+    11:     
+    12:     %ul{:class => 'NavBar'}
+    13:       %li{:class => @home_nav_class}= link_to "Home", home_path
+    14:       %li{:class => @input_nav_class}= link_to "Input", questions_path
+    15:       %li{:class => @formulae_nav_class}= link_to "Formulae", formulae_path
+    16:       %li{:class => @output_nav_class}= link_to "Output", output_path
+  app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__3884587815954251056_40848820'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:08:54 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `home' for #<#<Class:0x007f957c260db8>:0x007f957c094548>):
+    10:     %h1.title Outsourcing of Network Services Assessment Tool
+    11:     
+    12:     %ul{:class => 'NavBar'}
+    13:       %li{:class => @home_nav_class}= link_to "Home", home_path(home)
+    14:       %li{:class => @input_nav_class}= link_to "Input", questions_path
+    15:       %li{:class => @formulae_nav_class}= link_to "Formulae", formulae_path
+    16:       %li{:class => @output_nav_class}= link_to "Output", output_path
+  app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__3884587815954251056_70140003903700'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:09:05 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `index' for #<#<Class:0x007f957c260db8>:0x007f957c019de8>):
+    10:     %h1.title Outsourcing of Network Services Assessment Tool
+    11:     
+    12:     %ul{:class => 'NavBar'}
+    13:       %li{:class => @home_nav_class}= link_to "Home", home_path(index)
+    14:       %li{:class => @input_nav_class}= link_to "Input", questions_path
+    15:       %li{:class => @formulae_nav_class}= link_to "Formulae", formulae_path
+    16:       %li{:class => @output_nav_class}= link_to "Output", output_path
+  app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__3884587815954251056_70140037190900'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.6ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:09:26 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"formulae"} missing required keys: [:id]):
+    12:     %ul{:class => 'NavBar'}
+    13:       %li{:class => @home_nav_class}= link_to "Home", @Home
+    14:       %li{:class => @input_nav_class}= link_to "Input", questions_path
+    15:       %li{:class => @formulae_nav_class}= link_to "Formulae", formulae_path
+    16:       %li{:class => @output_nav_class}= link_to "Output", output_path
+    17:     
+    18:     #main
+  app/views/layouts/application.html.haml:15:in `_app_views_layouts_application_html_haml__3884587815954251056_70140186663460'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.8ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:09:54 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:09:56 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:09:59 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:10:00 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:10:01 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:10:05 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:13:21 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:13:23 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:13:25 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:13:27 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:16:00 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:16:14 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:16:15 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:16:28 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:16:30 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:16:32 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:16:35 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:17:10 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/output" for 165.91.13.254 at 2018-10-29 04:17:19 +0000
+Processing by OutputController#index as HTML
+  Rendered output/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:17:21 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:17:24 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/formulae" for 165.91.13.254 at 2018-10-29 04:17:26 +0000
+Processing by FormulaeController#index as HTML
+  Rendered formulae/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/output" for 165.91.13.254 at 2018-10-29 04:17:27 +0000
+Processing by OutputController#index as HTML
+  Rendered output/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 12ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:17:28 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:17:32 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/formulae" for 165.91.13.254 at 2018-10-29 04:17:34 +0000
+Processing by FormulaeController#index as HTML
+  Rendered formulae/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/output" for 165.91.13.254 at 2018-10-29 04:17:38 +0000
+Processing by OutputController#index as HTML
+  Rendered output/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:17:40 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:18:16 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-67ac407200fcd903992495b03a7f44325881afbb774f8a4ca858926deeb62ad8.css?body=1" for 165.91.13.254 at 2018-10-29 04:18:17 +0000
+
+
+Started GET "/formulae" for 165.91.13.254 at 2018-10-29 04:19:16 +0000
+Processing by FormulaeController#index as HTML
+  Rendered formulae/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/output" for 165.91.13.254 at 2018-10-29 04:19:18 +0000
+Processing by OutputController#index as HTML
+  Rendered output/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:19:19 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:19:19 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:19:33 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2fcda7f22cecd54e413befc23a005616b033aece812b9b0c6b0d68fe64728688.css?body=1" for 165.91.13.254 at 2018-10-29 04:19:33 +0000
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:19:51 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-0e130818b6bf63b241858e3035394fb634ae1c8fb541e6b77e0acc3e4016ef5f.css?body=1" for 165.91.13.254 at 2018-10-29 04:19:51 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:19:53 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/formulae" for 165.91.13.254 at 2018-10-29 04:19:54 +0000
+Processing by FormulaeController#index as HTML
+  Rendered formulae/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/formulae" for 165.91.13.254 at 2018-10-29 04:20:07 +0000
+Processing by FormulaeController#index as HTML
+  Rendered formulae/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-100f407c946bc096c9dbde2c18da81684c64ba84255a19c44fc9206349510520.css?body=1" for 165.91.13.254 at 2018-10-29 04:20:07 +0000
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:20:10 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:20:18 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:20:30 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2178aa5245fbaf93dd9a06c6c36b0623309a666d5ea7275bd5b9465e11cdef38.css?body=1" for 165.91.13.254 at 2018-10-29 04:20:30 +0000
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:20:36 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-edd7dc1fbe93bda2bf03d0aa5b6a86838ee0198ecef830f6efec4a061d7b0a4e.css?body=1" for 165.91.13.254 at 2018-10-29 04:20:37 +0000
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:20:39 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/formulae" for 165.91.13.254 at 2018-10-29 04:20:40 +0000
+Processing by FormulaeController#index as HTML
+  Rendered formulae/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/output" for 165.91.13.254 at 2018-10-29 04:20:41 +0000
+Processing by OutputController#index as HTML
+  Rendered output/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:20:44 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/formulae" for 165.91.13.254 at 2018-10-29 04:21:01 +0000
+Processing by FormulaeController#index as HTML
+  Rendered formulae/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/output" for 165.91.13.254 at 2018-10-29 04:21:02 +0000
+Processing by OutputController#index as HTML
+  Rendered output/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 165.91.13.254 at 2018-10-29 04:21:03 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 165.91.13.254 at 2018-10-29 04:21:16 +0000
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms)

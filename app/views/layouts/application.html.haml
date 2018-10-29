@@ -8,6 +8,13 @@
 
   %description
     %h1.title Outsourcing of Network Services Assessment Tool
+    
+    %ul{:class => 'NavBar'}
+      %li{:class => @home_nav_class}= link_to "Home", {:action => 'index', :controller => 'home'}
+      %li{:class => @input_nav_class}= link_to "Input", {:action => 'index', :controller => 'questions'}
+      %li{:class => @formulae_nav_class}= link_to "Formulae", {:action => 'index', :controller => 'formulae'}
+      %li{:class => @output_nav_class}= link_to "Output", {:action => 'index', :controller => 'output'}
+    
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
