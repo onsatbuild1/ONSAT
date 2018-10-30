@@ -8,7 +8,7 @@
 
 questions = [{:keyword => 'Finance Question', :index => 1, :category_id => 2, :answer => 5, :weight => 0.5, :description => 'Example Question'},
     	  {:keyword => 'Security Question', :index => 2, :category_id => 1, :answer => 2, :weight => 2.0, :description => 'Example Question'},
-    	  {:keyword => 'Business Question', :index => 3, :category_id => 2, :answer => 3, :weight => 2.5, :description => 'Example Question'},
+    	  {:keyword => 'Business Question', :index => 3, :category_id => 0, :answer => 3, :weight => 2.5, :description => 'Example Question'},
   	 ]
 
 questions.each do |question|

@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
     
-    @category_questions = []
+    @category_questions = {}
     @categories.each do |q_cat|
       @category_questions[q_cat[0]] = Question.where(category_id: q_cat[0])
     end
