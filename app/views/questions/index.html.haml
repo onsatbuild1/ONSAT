@@ -31,7 +31,7 @@
                 %tr
                   %td= question.keyword
                   %td= select :question, :level, ['0','1','2','3','4', '5', '6']
-                  //%td= question.weight
+                  %td= question.weight
                   %td= link_to "More about #{question.keyword}", question_path(question)
 
 

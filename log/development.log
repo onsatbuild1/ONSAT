@@ -9167,3 +9167,22 @@ Completed 200 OK in 227ms (Views: 197.2ms | ActiveRecord: 3.2ms)
 
 
 Started GET "/assets/application.self-54b04af418423da0471596d36e5baf2fac0ea48e378c48e74e65c5888d9f770a.css?body=1" for 47.218.200.166 at 2018-10-30 05:27:06 +0000
+
+
+Started GET "/" for 47.218.200.166 at 2018-10-30 05:32:02 +0000
+
+
+Started GET "/questions" for 47.218.200.166 at 2018-10-30 05:32:02 +0000
+Processing by QuestionsController#index as HTML
+Redirected to https://c20d8fe75bac437ca3289e35c77cb0bd.vfs.cloud9.us-east-2.amazonaws.com/questions?sort=keyword
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/questions?sort=keyword" for 47.218.200.166 at 2018-10-30 05:32:03 +0000
+Processing by QuestionsController#index as HTML
+  Parameters: {"sort"=>"keyword"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 0]]
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1  [["category_id", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  Rendered questions/index.html.haml within layouts/application (23.4ms)
+Completed 200 OK in 217ms (Views: 194.3ms | ActiveRecord: 3.4ms)
