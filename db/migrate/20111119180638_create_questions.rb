@@ -7,8 +7,8 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :answer
       t.string  :description
       t.float   :weight
-      t.integer :category_id
-      t.string  :criteria
+      t.integer :subcategory_id
+      t.string  :category
       t.timestamps
     end
   end

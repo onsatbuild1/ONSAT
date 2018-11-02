@@ -10,14 +10,14 @@
   //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
   //= submit_tag 'Refresh', :id => 'ratings_submit'
 
-- @categories.each do |category|
+- @subcategories.each do |subcategory|
   .accordion{:id => "accordionExample"}
     .card
       .card-header{:id => "headingOne"}
         %h5.mb-0
-          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category[0]}", "aria-expanded" => "false", "aria-controls" => "collapseOne"}
-            #{category[1]}
-      .collapse.show{:id => "collapse#{category[0]}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
+          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory[0]}", "aria-expanded" => "false", "aria-controls" => "collapseOne"}
+            #{subcategory.description}
+      .collapse.show{:id => "collapse#{subcategory[0]}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
         .card-body
           %table#questions
             %thead
@@ -27,7 +27,7 @@
                 %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
                 %th More Info
             %tdescription
-              - @category_questions[category[0]].each do |question|
+              - @subcategory_questions[subcategory.id].each do |question|
                 %tr
                   %td= question.keyword
                   %td= select :question, :level, ['0','1','2','3','4', '5', '6']

@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   
   def question_params
-    params.require(:question).permit(:keyword, :category_id, :index, :weight, :description)
+    params.require(:question).permit(:keyword, :subcategory_id, :index, :weight, :description)
   end
 
   def show
@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
     @formulae_nav_class = ''
     @output_nav_class = ''
     
-    @categories = {0 => 'Business', 1 => 'Security', 2 => 'Finance'}
+    @subcategories = Subcategory.all
     
     sort = params[:sort] || session[:sort]
     case sort
@@ -33,9 +33,9 @@ class QuestionsController < ApplicationController
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
     
-    @category_questions = {}
-    @categories.each do |q_cat|
-      @category_questions[q_cat[0]] = Question.where(category_id: q_cat[0])
+    @subcategory_questions = {}
+    @subcategories.each do |q_cat|
+      @subcategory_questions[q_cat.id] = Question.where(subcategory_id: q_cat.id)
     end
   end
 
