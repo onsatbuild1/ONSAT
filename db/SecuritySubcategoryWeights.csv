@@ -1,0 +1,19 @@
+Row #,Category ID,Unique  Ref ID,Category,,Default,ID,Corporately Assigned Weights,,ID,Corporately Assigned Weights,,ID,Corporately Assigned Weights,,ID,,Active Weights,Active Weights,Active Weights
+13,1,RRR,"1) Mission and Security Requirements, Roles, Responsibilities and Policies [System Design]",6,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+19,2,SDI,"2) System Performance, Resiliency, and Security Architecture and Design Practices [System Design]",14,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+25,3,DFG,"3) Communication Path, Data Flow, and Data Governance Policies and Practices [Data Governance]",22,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+31,4,AIA,4) Asset Inventory and Audit Management Practices  [Asset and Audit],30,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+37,5,AAC,5) Authentication and Access Control Practices [Info. Sys.Security],38,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+43,6,NSP,6) Network Segmentation Practices [Info. Sys.Security],46,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+49,7,CIA,"7) Data Confidentiality, Integrity and Availability Protection Practices [Info. Sys.Security]",54,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+55,8,VRM,8) Vulnerability and Resilience Management Practices [Info. Sys.Security],62,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+61,9,CMP,9) Configuration Management Practices [Info. Sys.Security],70,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+67,10,SMR,10) System Maintenance and Repairs Practices [Info. Sys.Security],78,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+73,11,IDR,11) Incident Detection and Response [Info. Sys.Security],86,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+79,12,CIR,12) Consequence / Impact  Recovery Policies and Practices [Info. Sys.Security],94,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+85,13,PFS,13) Physical / Facilities Security Policies and Practices [Physical Security],102,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+91,14,PSP,"14) Personnel Security Policies, Awareness, and Training [Personnel Security]",110,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+97,15,PMP,15) Performance Management Practices [System Governance],118,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+103,16,GRC,"16) Governance, Risk, and Compliance (GRC) Management Practices [System Governance]",126,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+109,17,AIP,17) Asset HW/SW Integrity Protection Practices [Supply Chain],134,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556
+115,18,SDV,18) Supplier Documentation and Vetting Policy and Practices [Supply Chain],142,0.0556,,1,,,1,,,1,,,,0.0556,0.0556,0.0556

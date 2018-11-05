@@ -13,16 +13,33 @@
 
 ActiveRecord::Schema.define(version: 20111119180638) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "subcategories", force: :cascade do |t|
+    t.string "subcategory_index"
+    t.float   "weight"
+    t.string  "description"
+    t.string  "category",       limit: 1
+  end
+
   create_table "questions", force: :cascade do |t|
     t.integer  "index"
     t.string   "keyword"
     t.string   "description"
     t.integer  "answer"
     t.float    "weight"
-    t.integer  "category_id"
-    t.string   "criteria"
+    t.integer  "subcategory_id"
+    t.string   "category",    limit: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "scales", force: :cascade do |t|
+    t.integer "level"
+    t.float   "score"
+    t.string  "description"
+    t.string  "category",    limit: 1
   end
 
 end

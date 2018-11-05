@@ -1,0 +1,144 @@
+﻿Row #,Category / Question ID,Unique  Ref ID,Category / Question,,Default,ID,Corporately Assigned Weights,,ID,Corporately Assigned Weights,,ID,Corporately Assigned Weights,,ID,,Active Weights,Active Weights,Active Weights
+6,1,RRR,"1) Mission and Security Requirements, Roles, Responsibilities and Policies [System Design]",,1,,5,0,,5,0,,5,0,,,1,1,1
+7,,,,,,,,,,,,,,,,,,,
+8,1,RRR - 1.1,1) Are Critical Mission/Business Functions Defined and Documented and are Security Requirements and Business Practices Derived and Documented from those Functions?,,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+9,2,RRR - 1.2,"2) Are System Security, Personnel Security, Physical Security and Supply Chain Security Roles and Responsibilities Defined, Documented, Assigned, and Implemented?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+10,3,RRR - 1.3,"3) Are documented Security Requirements for Data Confidentiality, Integrity, and Availability, System Integrity and Availability, and Personnel/Process Integrity and Availability incorporated in both System Design and Business Practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+11,4,RRR - 1.4,4) Does corporate management maintain oversight to ensure Mission/Business security requirements are in place as well as authorizing their implementation as well as holding responsible entities accountable? ,,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+12,5,RRR - 1.5,"5) Are Mission/Business security requirements incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+13,,,,,,,,,,,,,,,,,,,
+14,2,SDI,"2) System Performance, Resiliency, and Security Architecture and Design Practices [System Design]",,1,,5,0,,5,0,,5,0,,,1,1,1
+15,,,,,,,,,,,,,,,,,,,
+16,1,SDI - 2.1,"1) Are system and process performance, resiliency and security requirements derived and documented from Critical Mission/Business Functions and effectively incorporated into system designs and management practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+17,2,SDI - 2.2,"2) Are functions for monitoring, reporting, and responding to anomalous performance, resiliency, and security behavior implemented in system design and procedures to allow for timely response?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+18,3,SDI - 2.3,"3) Are functions for monitoring, reporting, and responding to anomalous performance, resiliency, and security behaviors tested and exercised prior to implementation and periodically during operations?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+19,4,SDI - 2.4,"4) Are performance, resiliency, and security actively monitored, measured, reported and effectively corrected to assure decision makers that these critical functions a meeting organizational goals and contractual responsibilities?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+20,5,SDI - 2.5,"5) Are System Performance, Resiliency, and Security Architecture and Design Practices incorporated into and enforced through service level agreements, contracts, policies, and regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+21,,,,,,,,,,,,,,,,,,,
+22,3,DFG,"3) Communication Path, Data Flow, and Data Governance Policies and Practices [Data Governance]",,1,,5,0,,5,0,,5,0,,,1,1,1
+23,,,,,,,,,,,,,,,,,,,
+24,1,DFG - 3.1,"1) Are Mission/Business critical communication path, data flows, and data governance policies and practices documented and maintained current?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+25,2,DFG - 3.2,"2) Are Mission/Business critical communication path, data flows, and data governance policies and practices incorporated into the operations and handling of Mission/Business critical information?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+26,3,DFG - 3.3,"3) Is Mission/Business critical information labeled, tagged, and securely associated with appropriate metadata to allow for and promote effective enforcement of Data Governance Policies and Practices",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+27,4,DFG - 3.4,"4) Are Data Governance incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+28,5,DFG - 3.5,"5) Are Communication Path, Data Flow, and Data Governance Policies and Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+29,,,,,,,,,,,,,,,,,,,
+30,4,AIA,4) Asset Inventory and Audit Management Practices  [Asset and Audit],,1,,5,0,,5,0,,5,0,,,1,1,1
+31,,,,,,,,,,,,,,,,,,,
+32,1,AIA - 4.1,"1) Are Mission/Business Critical operational assets inventoried and periodically audited to assure their initial and continued pedigree, accountability and integrity?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+33,2,AIA - 4.2,"2) Are Mission/Business Critical backup, reserve, and replacement assets inventoried, and periodically audited to assure their initial and continued pedigree, accountability and integrity?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+34,3,AIA - 4.3,"3) Are Asset Inventory and Audit data protected from loss, corruption, or manipulation and are asset inventory and audit data available for use and incorporated into defining the integrity of the Mission/Business critical functions and processes?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+35,4,AIA - 4.4,4) Are Asset Inventory and Audit data reviewed and assessed to support an effective known configuration of the system and processes and effective and timely corrective actions?,,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+36,5,AIA - 4.5,"5) Are Asset Inventory and Audit Management Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+37,,,,,,,,,,,,,,,,,,,
+38,5,AAC,5) Authentication and Access Control Practices [Info. Sys.Security],,1,,5,0,,5,0,,5,0,,,1,1,1
+39,,,,,,,,,,,,,,,,,,,
+40,1,AAC - 5.1,"1) Are identities of authorized individuals documented and vetted and credentials validated to support effective physical and electronic access and privilege management to Mission/Business critical information, services, and assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+41,2,AAC - 5.2,"2) Are credentials protected from loss, misuse, and manipulation?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+42,3,AAC - 5.3,"3) Are the processes for assessing and allowing access and privilege based on credentials documented, incorporated, and trained? Do these processes assure that only authorized individuals and entities have access and privilege to Mission/Business Critical Information, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+43,4,AAC - 5.4,"4) Are Access and Privilege incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+44,5,AAC - 5.5,"5) Are Authentication and Access Control Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+45,,,,,,,,,,,,,,,,,,,
+46,6,NSP,6) Network Segmentation Practices [Info. Sys.Security],,1,,5,0,,5,0,,5,0,,,1,1,1
+47,,,,,,,,,,,,,,,,,,,
+48,1,NSP - 6.1,"1) Are Mission/Business Critical Networks logically, physically, or cryptographically separated into support only authorized access to specific classes of information, functions, or services? (Test vs. Operational Separation; Information Class Separation; Function or Service Separation)",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+49,2,NSP - 6.2,"2) Are Authentication and Access Control processes Defined, Documented, Incorporated and Implemented? Do Authentication and Access Control support Network Segmentation?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+50,3,NSP - 6.3,"3) Are your network interfaces Defined, Controlled and Protected from unauthorized access?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+51,4,NSP - 6.4,"4) Are Network Separation incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+52,5,NSP - 6.5,"5) Are Network Segmentation Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+53,,,,,,,,,,,,,,,,,,,
+54,7,CIA,"7) Data Confidentiality, Integrity and Availability Protection Practices [Info. Sys.Security]",,1,,5,0,,5,0,,5,0,,,1,1,1
+55,,,,,,,,,,,,,,,,,,,
+56,1,CIA - 7.1,"1) Are Cybersecurity Practices Defined, Documented, Incorporated and Implemented to protect the Confidentiality, Integrity, and Availability of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+57,2,CIA - 7.2,"2) Are Mission/Business Critical Information, Functions, Services, and Assets Identified and Documented to support effective positive and negative access control through Data Confidentiality, Integrity, and Availability Protection Practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+58,3,CIA - 7.3,"3) Are Cryptographic and Key Management Processes managed and assessed to support effective positive and negative access control through Data Confidentiality, Integrity, and Availability Protection Practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+59,4,CIA - 7.4,"4) Are Data Confidentiality, Integrity, and Availability Protection incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+60,5,CIA - 7.5,"5) Are Data Confidentiality, Integrity, and Availability Protection Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+61,,,,,,,,,,,,,,,,,,,
+62,8,VRM,8) Vulnerability and Resilience Management Practices [Info. Sys.Security],,1,,5,0,,5,0,,5,0,,,1,1,1
+63,,,,,,,,,,,,,,,,,,,
+64,1,VRM - 8.1,"1) Are Vulnerability and Resilience Management Practices defined, documented, incorporated, and implemented to prevent and detect exploitation, modification, or denial and preservation of Mission/Business Critical Information, Functions, Services, and Assets through routine and crisis operations?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+65,2,VRM - 8.2,"2) Are vulnerability scans conducted and update patches and corrections documented and implemented to prevent and reduce opportunities for vulnerability exploitations that lead to the loss of Confidentiality, Integrity, or Availability of Mission/Business Critical Information, Functions, Services, and Assets through routine and crisis operations?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+66,3,VRM - 8.3,"3) Are backup, recovery, and continuity of operations (COOP) practices defined, documented, and incorporated into the system design and operating procedures to support timely continuity of availability of Mission/Business critical Information, Functions, Services, and Assets through routine and crisis operations?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+67,4,VRM - 8.4,"4) Are Vulnerability and Resilience Management incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+68,5,VRM - 8.5,"5) Are Vulnerability and Resilience Management Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+69,,,,,,,,,,,,,,,,,,,
+70,9,CMP,9) Configuration Management Practices [Info. Sys.Security],,1,,5,0,,5,0,,5,0,,,1,1,1
+71,,,,,,,,,,,,,,,,,,,
+72,1,CMP - 9.1,"1) Are Configuration Management Practices defined, documented, incorporated, and implemented to prevent the introduction (accidental or intentional) of vulnerabilities that can lead to the failure or exploitation of Mission/Business Critical Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+73,2,CMP - 9.2,"2) Are current system and process configurations documented and updated, and changes evaluated, approved, coordinated and implemented to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+74,3,CMP - 9.3,"3) Is the integrity and effectiveness of replacement parts and design changes reviewed and tested prior to implementation to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+75,4,CMP - 9.4,"4) Are Configuration Management incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+76,5,CMP - 9.5,"5) Are Configuration Management Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+77,,,,,,,,,,,,,,,,,,,
+78,10,SMR,10) System Maintenance and Repairs Practices [Info. Sys.Security],,1,,5,0,,5,0,,5,0,,,1,1,1
+79,,,,,,,,,,,,,,,,,,,
+80,1,SMR - 10.1,"1) Are System Maintenance and Repair Practices defined, documented, incorporated, and implemented to prevent the introduction (accidental or intentional) of vulnerabilities that can lead to the failure or exploitation and to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+81,2,SMR - 10.2,"2) Are System Maintenance and Repair personnel identified and vetted, and are repair procedures and implementations documented, reviewed, inspected, and tested to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+82,3,SMR - 10.3,"3) Are the integrity and effectiveness of repair parts and design changes reviewed, tested and evaluated prior to implementation to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+83,4,SMR - 10.4,"4) Are System Maintenance and Repair Practice incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+84,5,SMR - 10.5,"5) Are System Maintenance and Repair Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+85,,,,,,,,,,,,,,,,,,,
+86,11,IDR,11) Incident Detection and Response [Info. Sys.Security],,1,,5,0,,5,0,,5,0,,,1,1,1
+87,,,,,,,,,,,,,,,,,,,
+88,1,IDR - 11.1,"1) Are Incident Detection and Response Practices defined, documented, incorporated, and implemented to prevent the introduction (accidental or intentional) of vulnerabilities that can lead to the failure or exploitation and to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+89,2,IDR - 11.2,"2) Are Incident Detection and Response practices coordinated and are personnel trained, and procedures exercised to assure timely and effective incident response to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+90,3,IDR - 11.3,"3) Are after action assessments conducted, documented, and improvements leveraged to improve the processes, procedures, documentation, training, and implementation of Incident Detection and Response Practices to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+91,4,IDR - 11.4,"4) Are potentially harmful incidents detected, actively monitored, reported and mitigated to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+92,5,IDR - 11.5,"5) Are Incident Detection and Response Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+93,,,,,,,,,,,,,,,,,,,
+94,12,CIR,12) Consequence / Impact  Recovery Policies and Practices [Info. Sys.Security],,1,,5,0,,5,0,,5,0,,,1,1,1
+95,,,,,,,,,,,,,,,,,,,
+96,1,CIR - 12.1,"1) Are Consequence / Impact Recovery Practices defined, documented, incorporated, and implemented to minimize the damage associated with failures, accidents, natural disasters, and intentional attacks and to restore operational capability and integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+97,2,CIR - 12.2,"2) Are the direct technical and procedural effects of failures, accidents, natural disasters, and intentional attacks documented and mapped to their broader operational effects on the Confidentiality, Integrity, and Availability of Mission/Business Critical Information, Functions, Services, and Assets and ultimately to Mission/Business operations?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+98,3,CIR - 12.3,"3) Are Mission/Business Continuity of Operations plans and policies documented and incorporated, personnel trained, procedures exercised, and backup, recovery, and reconstitution assets invested in , protected, and tested to assure the continued integrity and operational availability of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+99,4,CIR - 12.4,"4) Are Consequence / Impact Recovery Policy and Practice incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+100,5,CIR - 12.5,"5) Are Consequence / Impact Recovery Policy and Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+101,,,,,,,,,,,,,,,,,,,
+102,13,PFS,13) Physical / Facilities Security Policies and Practices [Physical Security],,1,,5,0,,5,0,,5,0,,,1,1,1
+103,,,,,,,,,,,,,,,,,,,
+104,1,PFS - 13.1,"1) Are physical/facilities security policies and practices defined, documented, and incorporated into the processes, procedures, documentation, training, and implementation of Physical / Facilities Security Policy and Practices to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+105,2,PFS - 13.2,"2) Are Physical / Facilities Security Policies and Practices implemented and coordinated with Information Security and Personnel Security practices to provide an effective and coordinated ability to preserve the Confidentiality, Integrity, and Availability of Mission/Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+106,3,PFS - 13.3,"3) Are Physical / Facilities Security Policies and Practices assessed and are personnel trained, and procedures exercised to assure timely, effective, and coordinated incident response to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+107,4,PFS - 13.4,"4) Are Physical / Facilities Security Policy and Practice incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+108,5,PFS - 13.5,"5) Are Physical / Facilities Security Policy and Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+109,,,,,,,,,,,,,,,,,,,
+110,14,PSP,"14) Personnel Security Policies, Awareness, and Training [Personnel Security]",,1,,5,0,,5,0,,5,0,,,1,1,1
+111,,,,,,,,,,,,,,,,,,,
+112,1,PSP - 14.1,"1) Are Personnel Security Policies and Practices defined, documented and incorporated into the processes, procedures, documentation, training, and implementation of Personnel Security Policy and Practices to ensure that only vetted and authorized personnel with requisite knowledge and skills have access to Mission Critical/Business Critical information, functions, services, and Assets? And to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+113,2,PSP - 14.2,"2) Are Personnel Security Policies and Practices coordinated with Information Security and Physical Security practices to provide an effective and coordinated ability to preserve the Confidentiality, Integrity, and Availability of Mission/Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+114,3,PSP - 14.3,"3) Are Personnel Security Policies and Practices assessed, personnel trained, and procedures exercised to assure the identity and trustworthiness of employees, contractors, maintenance and service personnel, and visitors with physical or logical access to Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+115,4,PSP - 14.4,"4) Are Personnel Security Policy and Practice incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+116,5,PSP - 14.5,"5) Are Personnel Security Policy and Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+117,,,,,,,,,,,,,,,,,,,
+118,15,PMP,15) Performance Management Practices [System Governance],,1,,5,0,,5,0,,5,0,,,1,1,1
+119,,,,,,,,,,,,,,,,,,,
+120,1,PMP - 15.1,"1) Are Performance, Confidentiality, Integrity, and Availability practices documented and implemented to meet Mission/Business Critical operations and contractual obligations through routine and crisis situations?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+121,2,PMP - 15.2,"2) Are Mission/Business Critical operations and associated performance levels defined and incorporated into the corporate management practices to preserve the Confidentiality, Integrity, and Availability of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+122,3,PMP - 15.3,"3) Are Mission/Business Critical operations and associated performance levels trained and exercised by all personnel to preserve the Confidentiality, Integrity, and Availability of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+123,4,PMP - 15.4,"4) Are System Performance, Information Confidentiality, Information Integrity, and Information Availability measured to assure decision makers that these critical functions a meeting organizational goals and contractual responsibilities?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+124,5,PMP - 15.5,"5) Are System Performance and preserving Information Confidentiality, Information Integrity, and Information Availability balanced to meet business and security needs? ",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+125,,,,,,,,,,,,,,,,,,,
+126,16,GRC,"16) Governance, Risk, and Compliance (GRC) Management Practices [System Governance]",,1,,5,0,,5,0,,5,0,,,1,1,1
+127,,,,,,,,,,,,,,,,,,,
+128,1,GRC - 16.1,"1) Are Governance, Risk, and Compliance (GRC) Management Practices defined, documented and incorporated into the corporate management practices to preserve the Confidentiality, Integrity, and Availability of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+129,2,GRC - 16.2,"2) Are Governance, Risk, and Compliance (GRC) Management Practices implemented, coordinated, trained, and corporately managed to meet Mission/Business Critical operations and obligations through routine and crisis situations?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+130,3,GRC - 16.3,"3) Are Governance, Risk, and Compliance (GRC) policies, requirements, and obligations and their implementation effectively incorporated into the decision-making culture and management practices throughout the organization?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+131,4,GRC - 16.4,"4) Are Governance, Risk, and Compliance (GRC) Practices measured to assure decision makers that these critical functions are meeting organizational goals, contractual responsibilities, and legal and regulatory requirements?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+132,5,GRC - 16.5,"5) Are Governance, Risk, and Compliance (GRC) Management Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+133,,,,,,,,,,,,,,,,,,,
+134,17,AIP,17) Asset HW/SW Integrity Protection Practices [Supply Chain],,1,,5,0,,5,0,,5,0,,,1,1,1
+135,,,,,,,,,,,,,,,,,,,
+136,1,AIP - 17.1,"1) Are Asset HW/SW Integrity Practices documented and incorporated to prevent the accidental or intentional introduction of vulnerabilities that can lead to the failure or exploitation of Mission/Business Critical Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+137,2,AIP - 17.2,"2) Are current Asset HW/SW performance and integrity specifications documented and updated, and changes evaluated, approved, and implemented to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+138,3,AIP - 17.3,"3) Are the performance and integrity characteristics of Asset HW/SW assessed and tested prior to implementation to preserve the integrity of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+139,4,AIP - 17.4,"4) Are Asset HW/SW incidents and violations actively monitored, reported, documented, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+140,5,AIP - 17.5,"5) Are Asset HW/SW Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+141,,,,,,,,,,,,,,,,,,,
+142,18,SDV,18) Supplier Documentation and Vetting Policy and Practices [Supply Chain],,1,,5,0,,5,0,,5,0,,,1,1,1
+143,,,,,,,,,,,,,,,,,,,
+144,1,SDV - 18.1,"1) Are Supplier Documentation and Vetting Policy and Practices implemented and coordinated with Information Security and Physical Security practices to provide an effective and coordinated ability to preserve the Confidentiality, Integrity, and Availability of Mission/Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+145,2,SDV - 18.2,"2) Are Supplier Documentation and Vetting Policy and Practices documented, personnel trained, and procedures exercised to assure the integrity of products and services provided by this Supplier to preserve the Confidentiality, Integrity, and Availability of Mission/Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+146,3,SDV - 18.3,"3) Are Supplier Documentation and Vetting Practices incorporated into processes, procedures, documentation, training, and implementation of Supplier Documentation and Vetting Practices to preserve the Confidentiality, Integrity, and Availability of Mission/Business Critical Information, Functions, Services, and Assets?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+147,4,SDV - 18.4,"4) Are Supplier Documentation and Vetting Policy and Practice incidents and violations actively monitored, reported, and effectively corrected?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2
+148,5,SDV - 18.5,"5) Are Supplier Documentation and Vetting Policy and Practices incorporated into and enforced through service level agreements, contracts, policies, regulatory practices?",,0.2,,1,,,1,,,1,,,,0.2,0.2,0.2

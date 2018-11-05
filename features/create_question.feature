@@ -12,7 +12,8 @@ Feature: Create Question
     Given I am on the questions page
     When I follow "Add new question"
     Then I should see "Create New Question"
-    
+
+#creating question is broken and we don't have to implement it    
   Scenario: Questions are created
     Given I am on the new question page
     When I fill in "question_keyword" with "TestQuestion"
