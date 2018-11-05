@@ -12,6 +12,10 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
+    
+    # ITERATION 2 -- NAVBAR
+    when /^the Home page$/
+      '/home'
 
     when /^the upload page$/
       '/'
