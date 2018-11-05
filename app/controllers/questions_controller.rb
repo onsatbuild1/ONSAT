@@ -33,10 +33,10 @@ class QuestionsController < ApplicationController
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
     
-    @subcategory_questions = {}
-    @subcategories.each do |q_cat|
-      @subcategory_questions[q_cat.id] = Question.where(subcategory_id: q_cat.id)
-    end
+    #@subcategory_questions = {}
+    #@subcategories.each do |q_cat|
+      #@subcategory_questions[q_cat.id] = Question.where(subcategory_id: q_cat.id)
+    #end
   end
 
   def new

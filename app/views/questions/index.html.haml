@@ -17,6 +17,7 @@
         %h5.mb-0
           %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory[0]}", "aria-expanded" => "false", "aria-controls" => "collapseOne"}
             #{subcategory.description}
+   
       .collapse.show{:id => "collapse#{subcategory[0]}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
         .card-body
           %table#questions
@@ -27,7 +28,7 @@
                 %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
                 %th More Info
             %tdescription
-              - @subcategory_questions[subcategory.id].each do |question|
+              - subcategory.questions.each do |question|
                 %tr
                   %td= question.keyword
                   %td= select :question, :level, ['0','1','2','3','4', '5', '6']
