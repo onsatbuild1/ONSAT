@@ -15,10 +15,10 @@
     .card
       .card-header{:id => "headingOne"}
         %h5.mb-0
-          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory[0]}", "aria-expanded" => "false", "aria-controls" => "collapseOne"}
+          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory.id}", "aria-expanded" => "false", "aria-controls" => "collapseOne"}
             #{subcategory.description}
    
-      .collapse.show{:id => "collapse#{subcategory[0]}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
+      .collapse.show{:id => "collapse#{subcategory.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
         .card-body
           %table#questions
             %thead
