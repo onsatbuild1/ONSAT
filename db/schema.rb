@@ -43,15 +43,14 @@ ActiveRecord::Schema.define(version: 20111119180638) do
   end
 
   create_table "company", force: :cascade do |t|
-    t.string  "name"
+    t.string "name"
     t.float   "score"
     t.string  "description"
   end
   
   create_table "answer", force: :cascade do |t|
-    t.integer  "company_id"
-    t.integer  "question_id"
-    t.string   "level"
+    t.integer "company_id"
+    t.integer "questions_id"
+    t.string  "level"
   end
-
 end
