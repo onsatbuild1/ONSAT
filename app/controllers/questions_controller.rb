@@ -68,8 +68,13 @@ class QuestionsController < ApplicationController
   end
   
   def upload
-    Question.upload(params[:file])
-    redirect_to root_url, notice: "Upload complete"
+      if params[:file].present?
+          Question.upload(params[:file])
+          redirect_to root_url, notice: "Upload Successful"
+          else
+          flash[:error] = "No File Chosen"
+          redirect_to root_url
+      end
   end
 
 end 
