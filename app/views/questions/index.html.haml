@@ -9,31 +9,39 @@
   //  = rating
   //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
   //= submit_tag 'Refresh', :id => 'ratings_submit'
-
-- @subcategories.each do |subcategory|
-  .accordion{:id => "accordionExample"}
+- @categories.each do |category|
+  .accordion{:id => "accordionCategory"}
     .card
       .card-header{:id => "headingOne"}
         %h5.mb-0
-          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory.id}", "aria-expanded" => "false", "aria-controls" => "collapseOne"}
-            #{subcategory.description}
-   
-      .collapse.show{:id => "collapse#{subcategory.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
-        .card-body
-          %table#questions
-            %thead
-              %tr
-                %th{:class => @keyword_header}= link_to 'Question Keyword', questions_path(:sort => 'keyword'), :id => 'keyword_header'
-                %th Answer Score
-                %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
-                %th More Info
-            %tdescription
-              - subcategory.questions.each do |question|
-                %tr
-                  %td= question.keyword
-                  %td= select :question, :level, ['0','1','2','3','4', '5', '6']
-                  %td= question.weight
-                  %td= link_to "More about #{question.keyword}", question_path(question)
+          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+            #{category}
+
+        .collapse{:id => "collapse#{category}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
+          - @subcategories.where(category: category[0]).each do |subcategory|
+            .accordion{:id => "accordionSubCat"}
+              .card
+                .card-header{:id => "headingOne"}
+                  %h5.mb-0
+                    %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory.id}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+                      #{subcategory.description}
+  
+                .collapse{:id => "collapse#{subcategory.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionSubCat"}
+                  .card-body
+                    %table#questions
+                      %thead
+                        %tr
+                          %th{:class => @keyword_header}= link_to 'Question Keyword', questions_path(:sort => 'keyword'), :id => 'keyword_header'
+                          %th Answer Score
+                          %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
+                          %th More Info
+                      %tdescription
+                        - subcategory.questions.each do |question|
+                          %tr
+                            %td= question.keyword
+                            %td= select :question, :level, ['0','1','2','3','4', '5', '6']
+                            %td= question.weight
+                            %td= link_to "More about #{question.keyword}", question_path(question)
 
 
 

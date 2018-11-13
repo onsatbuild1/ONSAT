@@ -149,6 +149,12 @@ button:hover:before,button:hover:after{
   overflow: hidden;
   transition: height 0.35s ease;
 }
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
 .card {
   position: relative;
   display: -ms-flexbox;
