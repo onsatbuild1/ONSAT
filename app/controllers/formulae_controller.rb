@@ -5,5 +5,7 @@ class FormulaeController < ApplicationController
         @input_nav_class = '' # Input Tab
         @formulae_nav_class = 'active'
         @output_nav_class = ''
+        
+        @subcategories = Subcategory.all
     end
 end

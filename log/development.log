@@ -21178,3 +21178,69 @@ Processing by QuestionsController#index as HTML
   [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 52]]
   Rendered questions/index.html.haml within layouts/application (191.2ms)
 Completed 200 OK in 214ms (Views: 198.4ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/questions" for 165.91.12.109 at 2018-11-13 05:23:09 +0000
+Processing by QuestionsController#index as HTML
+  [1m[36mSubcategory Load (0.4ms)[0m  [1mSELECT "subcategories".* FROM "subcategories"[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 2]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 3]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 4]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 5]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 6]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 7]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 8]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 9]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 10]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 11]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 12]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 13]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 14]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 15]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 16]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 17]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 18]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 19]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 20]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 21]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 22]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 23]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 24]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 25]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 26]]
+  Rendered questions/index.html.haml within layouts/application (116.8ms)
+Completed 200 OK in 309ms (Views: 273.0ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/formulae" for 165.91.12.109 at 2018-11-13 05:23:11 +0000
+Processing by FormulaeController#index as HTML
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT "subcategories".* FROM "subcategories"
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 1]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 3]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 4]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 5]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 6]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 7]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 8]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 9]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 10]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 11]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 12]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 13]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 14]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 15]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 16]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 17]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 18]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 19]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 20]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 21]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 22]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 23]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 24]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1[0m  [["subcategory_id", 25]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."subcategory_id" = $1  [["subcategory_id", 26]]
+  Rendered formulae/index.html.haml within layouts/application (77.6ms)
+Completed 200 OK in 88ms (Views: 83.7ms | ActiveRecord: 4.2ms)
