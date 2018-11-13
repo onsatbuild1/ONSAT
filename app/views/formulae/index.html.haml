@@ -1,1 +1,49 @@
-%p To be done formulae tab
+-#  This file is app/views/questions/index.html.haml
+%h1 Formulae
+
+= form_tag questions_path, :method => :get do
+  = hidden_field_tag "keyword_sort", true if @keyword_header
+  //= hidden_field_tag ":release_date_sort", true if @date_header
+  //Include: 
+  //- @all_ratings.each do |rating|
+  //  = rating
+  //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
+  //= submit_tag 'Refresh', :id => 'ratings_submit'
+- @categories.each do |category|
+  .accordion{:id => "accordionCategory"}
+    .card
+      .card-header{:id => "headingOne"}
+        %h5.mb-0
+          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+            #{category}
+        .collapse{:id => "collapse#{category}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
+          - @subcategories.where(category: category[0]).each_with_index do |subcategory,index|
+            .accordion{:id => "accordionSubCat"}
+              .card
+                .card-header{:id => "headingOne"}
+                  %h5.mb-0
+                    %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory.id}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+                      -if index==0
+                        \= #{subcategory.description} &nbsp* &nbsp#{subcategory.weight}
+                      -else
+                        &nbsp + &nbsp#{subcategory.description} &nbsp* &nbsp#{subcategory.weight}
+    
+                .collapse{:id => "collapse#{subcategory.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionSubCat"}
+                  .card-body
+                    %table#questions
+                      %thead
+                        - subcategory.questions.each_with_index do |question,index|
+                          -if index == 0
+                            %h4 = &nbsp#{question.keyword} &nbsp* &nbsp#{question.weight} 
+                          -else
+                            %h4 &nbsp + &nbsp#{question.keyword} &nbsp* &nbsp#{question.weight} 
+
+
+
+= link_to 'Add new question', new_question_path
+
+%h2 Upload
+
+= form_tag upload_questions_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Upload"
