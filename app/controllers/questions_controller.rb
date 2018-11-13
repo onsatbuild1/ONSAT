@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
     
     #@subcategory_questions = {}
     #@subcategories.each do |q_cat|
-      #@subcategory_questions[q_cat.id] = Question.where(subcategory_id: q_cat.id)
+    @categories = ["Business", "Security", "Finance"]#Question.where(subcategory_id: q_cat.id)
     #end
   end
 
