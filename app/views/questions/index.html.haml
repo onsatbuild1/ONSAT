@@ -14,11 +14,11 @@
     .card
       .card-header{:id => "headingOne"}
         %h5.mb-0
-          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
-            #{category}
+          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category.description}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+            #{category.description}
 
-        .collapse{:id => "collapse#{category}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
-          - @subcategories.where(category: category[0]).each do |subcategory|
+        .collapse{:id => "collapse#{category.description}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
+          - category.subcategories.order('id ASC').each do |subcategory|
             .accordion{:id => "accordionSubCat"}
               .card
                 .card-header{:id => "headingOne"}
@@ -36,7 +36,7 @@
                           %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
                           %th More Info
                       %tdescription
-                        - subcategory.questions.each do |question|
+                        - subcategory.questions.order('id ASC').each do |question|
                           %tr
                             %td= question.keyword
                             %td= select :question, :level, ['0','1','2','3','4', '5', '6']

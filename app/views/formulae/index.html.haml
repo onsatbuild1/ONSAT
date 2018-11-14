@@ -14,17 +14,19 @@
     .card
       .card-header{:id => "headingOne"}
         %h5.mb-0
-          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
-            #{category}
-        .collapse{:id => "collapse#{category}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
-          - @subcategories.where(category: category[0]).each_with_index do |subcategory,index|
+          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category.description}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+            #{category.description}
+        .collapse{:id => "collapse#{category.description}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
+          - category.subcategories.order('id ASC').each_with_index do |subcategory,index|
             .accordion{:id => "accordionSubCat"}
               .card
                 .card-header{:id => "headingOne"}
                   %h5.mb-0
                     %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory.id}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
                       -if index==0
-                        \= #{subcategory.description} &nbsp* &nbsp#{subcategory.weight}
+                        \= &nbsp( &nbsp#{subcategory.description} &nbsp* &nbsp#{subcategory.weight}
+                      -elsif index == category.subcategories.length-1
+                        &nbsp + &nbsp#{subcategory.description} &nbsp* &nbsp#{subcategory.weight}&nbsp)&nbsp #{"/"} #{category.weight_sum}
                       -else
                         &nbsp + &nbsp#{subcategory.description} &nbsp* &nbsp#{subcategory.weight}
     
@@ -32,9 +34,11 @@
                   .card-body
                     %table#questions
                       %thead
-                        - subcategory.questions.each_with_index do |question,index|
+                        - subcategory.questions.order('id ASC').each_with_index do |question,index|
                           -if index == 0
-                            %h4 = &nbsp#{question.keyword} &nbsp* &nbsp#{question.weight} 
+                            %h4 = &nbsp( &nbsp#{question.keyword} &nbsp* &nbsp#{question.weight} 
+                          -elsif index == subcategory.questions.length-1
+                            %h4 &nbsp + &nbsp #{question.keyword} &nbsp* &nbsp#{question.weight} &nbsp)&nbsp #{"/"} #{subcategory.weight_sum}
                           -else
                             %h4 &nbsp + &nbsp#{question.keyword} &nbsp* &nbsp#{question.weight} 
 
