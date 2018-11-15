@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 20111119180638) do
     t.string  "level"
   end
 
+  create_table "score", force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "subcategory_id"
+    t.float   "value"
+    t.integer "category_id"
+    t.string  "is_category_score" #in case associations don't work
+  end
+  
+#course of action, to be finished
+  create_table "coa", force: :cascade do |t|      
+    t.string  "coa_index"
+  end
+  
+  
   create_table "company", force: :cascade do |t|
     t.string "name"
     t.float  "score"
