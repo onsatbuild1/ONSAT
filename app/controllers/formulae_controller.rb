@@ -5,7 +5,8 @@ class FormulaeController < ApplicationController
         @input_nav_class = '' # Input Tab
         @formulae_nav_class = 'active'
         @output_nav_class = ''
-        @categories = ["Business", "Security", "Finance"]
-        @subcategories = Subcategory.all
+        
+        @categories = Category.all
+        @categories =@categories.sort { |a,b| a.description <=> b.description }
     end
 end

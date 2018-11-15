@@ -16,6 +16,11 @@ ActiveRecord::Schema.define(version: 20111119180638) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string  "description"
+    t.float   "weight_sum"
+  end
+  
   create_table "answer", force: :cascade do |t|
     t.integer "company_id"
     t.integer "questions_id"
@@ -35,7 +40,7 @@ ActiveRecord::Schema.define(version: 20111119180638) do
     t.integer  "answer"
     t.float    "weight"
     t.integer  "subcategory_id"
-    t.string   "category",       limit: 1
+    #t.string   "category",       limit: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,7 +56,9 @@ ActiveRecord::Schema.define(version: 20111119180638) do
     t.string "subcategory_index"
     t.float  "weight"
     t.string "description"
-    t.string "category",          limit: 1
+    #t.string "category",          limit: 1
+    t.float  "weight_sum"
+    t.integer "category_id"
   end
 
 end

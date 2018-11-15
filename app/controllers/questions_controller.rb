@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
     @formulae_nav_class = ''
     @output_nav_class = ''
     
-    @subcategories = Subcategory.all
+    #@subcategories = Subcategory.all
     
     sort = params[:sort] || session[:sort]
     case sort
@@ -33,10 +33,8 @@ class QuestionsController < ApplicationController
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
     
-    #@subcategory_questions = {}
-    #@subcategories.each do |q_cat|
-    @categories = ["Business", "Security", "Finance"]#Question.where(subcategory_id: q_cat.id)
-    #end
+    @categories = Category.all
+    @categories =@categories.sort { |a,b| a.description <=> b.description }
   end
 
   def new

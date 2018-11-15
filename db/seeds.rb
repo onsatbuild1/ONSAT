@@ -7,23 +7,28 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+categories =[{:description => 'Business', :weight_sum => 0},
+             {:description => 'Security', :weight_sum => 0},
+             {:description => 'Finance', :weight_sum => 0},]
+        
+categories.each do |category|
+  Category.create!(category)
+end
 
-
-
-scales = [{:level=> 0, :score => 0.5, :description => 'BLevel 0',:category =>'B'},
-        {:level=> 1, :score => 0.5, :description => 'BLevel 1',:category =>'B'},
-        {:level=> 2, :score => 0.5, :description => 'BLevel 2',:category =>'B'},
-        {:level=> 3, :score => 0.5, :description => 'BLevel 3',:category =>'B'},
-        {:level=> 4, :score => 0.5, :description => 'BLevel 4',:category =>'B'},
-        {:level=> 5, :score => 0.5, :description => 'BLevel 5',:category =>'B'},
-        {:level=> 6, :score => 0.5, :description => 'BLevel 6',:category =>'B'},
-        {:level=> 0, :score => 0.5, :description => 'SLevel 0',:category =>'S'},
-        {:level=> 1, :score => 0.5, :description => 'SLevel 1',:category =>'S'},
-        {:level=> 2, :score => 0.5, :description => 'SLevel 2',:category =>'S'},
-        {:level=> 3, :score => 0.5, :description => 'SLevel 3',:category =>'S'},
-        {:level=> 4, :score => 0.5, :description => 'SLevel 4',:category =>'S'},
-        {:level=> 5, :score => 0.5, :description => 'SLevel 5',:category =>'S'},
-        {:level=> 6, :score => 0.5, :description => 'SLevel 6',:category =>'S'},
+scales = [{:level => 0, :score => 0.5, :description => 'BLevel 0',:category =>'B'},
+        {:level => 1, :score => 0.5, :description => 'BLevel 1',:category =>'B'},
+        {:level => 2, :score => 0.5, :description => 'BLevel 2',:category =>'B'},
+        {:level => 3, :score => 0.5, :description => 'BLevel 3',:category =>'B'},
+        {:level => 4, :score => 0.5, :description => 'BLevel 4',:category =>'B'},
+        {:level => 5, :score => 0.5, :description => 'BLevel 5',:category =>'B'},
+        {:level => 6, :score => 0.5, :description => 'BLevel 6',:category =>'B'},
+        {:level => 0, :score => 0.5, :description => 'SLevel 0',:category =>'S'},
+        {:level => 1, :score => 0.5, :description => 'SLevel 1',:category =>'S'},
+        {:level => 2, :score => 0.5, :description => 'SLevel 2',:category =>'S'},
+        {:level => 3, :score => 0.5, :description => 'SLevel 3',:category =>'S'},
+        {:level => 4, :score => 0.5, :description => 'SLevel 4',:category =>'S'},
+        {:level => 5, :score => 0.5, :description => 'SLevel 5',:category =>'S'},
+        {:level => 6, :score => 0.5, :description => 'SLevel 6',:category =>'S'},
   	 ]
 
 scales.each do |scale|
@@ -32,60 +37,98 @@ end
 
 csv_file = File.read('db/BusinessSubcategoryWeights.csv')
 csv=CSV.parse(csv_file,headers: true,skip_blanks: true).reject { |row| row.to_hash.values.all?(&:nil?) }
+
+category=Category.find_by(description: 'Business')
+new_weight_sum=0
 csv.each do |row|
     subcategory={:subcategory_index => row['index'], 
                 :weight => row['Default Category Weight (Equal Weight)'], 
                 :description => row['SERVICE PROVIDER BUSINESS INFORMATION'], 
-                :category => 'B'}
+                :category_id => Category.find_by(description: 'Business').id,
+                :weight_sum => 0,
+                }
     #print(row['index'])
+    
+    new_weight_sum = new_weight_sum + subcategory[:weight].to_f #update weight sum
+    Subcategory.create!(subcategory)
+    
+end
+
+category.update(weight_sum: new_weight_sum)
+
+
+
+csv_file = File.read('db/SecuritySubcategoryWeights.csv')
+csv=CSV.parse(csv_file,headers: true,skip_blanks: true).reject { |row| row.to_hash.values.all?(&:nil?) }
+
+category=Category.find_by(description: 'Security')
+new_weight_sum=0
+
+csv.each do |row|
+    subcategory={:subcategory_index => row['Unique  Ref ID'], 
+                :weight => row['Default'], 
+                :description => row['Category'], 
+                :category_id => Category.find_by(description: 'Security').id,
+                :weight_sum => 0,
+                }
+    #print(row['index'])
+    new_weight_sum=new_weight_sum + subcategory[:weight].to_f #update weight sum
+    #print(new_weight_sum)
+    #print("\n")
     Subcategory.create!(subcategory)
 end
 
+category.update(weight_sum: new_weight_sum)
+
 csv_file = File.read('db/BusinessQuestionWeights.csv')
 csv=CSV.parse(csv_file,headers: true).reject { |row| row.to_hash.values.all?(&:nil?) }
-subcategory_index_fornow='A';
+subcategory_index_fornow='NOT APPLICABLE'
+
 csv.each do |row|
   if(row['User Defined Weights  (Sum = 1.00)']=='0')
     subcategory_index_fornow=row['index']
+    new_weight_sum=0
   else
     question={:keyword => row['SERVICE PROVIDER BUSINESS INFORMATION'], 
               :index => row['index'], 
               :weight => row['Default Category Weight (Equal Weight)'], 
               :description => row['SERVICE PROVIDER BUSINESS INFORMATION'],
-              :category => 'B',
-              :subcategory_id => Subcategory.find_by(subcategory_index: subcategory_index_fornow, category:'B' ).id}
+              #:category => 'B',
+              :subcategory_id => Subcategory.find_by(subcategory_index: subcategory_index_fornow, category_id:Category.find_by(description: 'Business').id ).id}
     Question.create!(question)
+    new_weight_sum +=question[:weight].to_f
+  end
+  if subcategory_index_fornow!='NOT APPLICABLE'
+    subcategory=Subcategory.find_by(subcategory_index: subcategory_index_fornow, category_id:Category.find_by(description: 'Business').id )
+    subcategory.update(weight_sum: new_weight_sum)
   end
 end
 
 
-csv_file = File.read('db/SecuritySubcategoryWeights.csv')
-csv=CSV.parse(csv_file,headers: true,skip_blanks: true).reject { |row| row.to_hash.values.all?(&:nil?) }
-csv.each do |row|
-    subcategory={:subcategory_index => row['Unique  Ref ID'], 
-                :weight => row['Default'], 
-                :description => row['Category'], 
-                :category => 'S'}
-    #print(row['index'])
-    Subcategory.create!(subcategory)
-end
+
 
 csv_file = File.read('db/SecurityQuestionWeights.csv')
 csv=CSV.parse(csv_file,headers: true,:encoding => 'ISO-8859-1').reject { |row| row.to_hash.values.all?(&:nil?) }
-subcategory_index_fornow='A';
+subcategory_index_fornow='NOT APPLICABLE'
+new_weight_sum=0
 csv.each do |row|
   if(row['Unique  Ref ID']!=nil)
     if(!(row['Unique  Ref ID']=~/-/))
       subcategory_index_fornow=row['Unique  Ref ID']
-      #print(row)
+      new_weight_sum=0
     else
       question={:keyword => row['Category / Question'], 
               :index => row['Category / Question ID'], 
               :weight => row['Default'], 
               :description => row['Category / Question'],
-              :category => 'S',
-              :subcategory_id => Subcategory.find_by(subcategory_index: subcategory_index_fornow, category:'S' ).id}
+              #:category => 'S',
+              :subcategory_id => Subcategory.find_by(subcategory_index: subcategory_index_fornow, category_id:Category.find_by(description: 'Security').id ).id}
       Question.create!(question)
+      new_weight_sum +=question[:weight].to_f
+    end
+    if subcategory_index_fornow!='NOT APPLICABLE'
+      subcategory=Subcategory.find_by(subcategory_index: subcategory_index_fornow, category_id:Category.find_by(description: 'Security').id )
+      subcategory.update(weight_sum: new_weight_sum)
     end
   end
 end
