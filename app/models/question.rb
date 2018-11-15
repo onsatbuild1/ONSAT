@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
     belongs_to :subcategory
-    has_many :companys, :through => :answers
+    has_many :companies, :through => :answers
     def self.upload(file)
         CSV.foreach(file.path, headers: true) do |row|
             question_hash = row.to_hash
