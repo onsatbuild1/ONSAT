@@ -7,6 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+companies=[{:name => 'Good Company', :company_score => 0, :description => 'It\'s Good Company'},
+           {:name => 'Bad Company', :company_score => 0, :description => 'It\'s Bad Company'},
+           {:name => 'Ugly Company', :company_score => 0, :description => 'It\'s Ugly Company'},]
+        
+companies.each do |company|
+  Company.create!(company)
+end
+
+
 categories =[{:description => 'Business', :weight_sum => 0},
              {:description => 'Security', :weight_sum => 0},
              {:description => 'Finance', :weight_sum => 0},]

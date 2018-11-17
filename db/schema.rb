@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 20111119180638) do
     t.float   "weight_sum"
   end
   
-  create_table "answer", force: :cascade do |t|
+  create_table "answers", force: :cascade do |t|
     t.integer "company_id"
     t.integer "questions_id"
     t.string  "level"
   end
 
-  create_table "score", force: :cascade do |t|
+  create_table "scores", force: :cascade do |t|
     t.integer "company_id"
     t.integer "subcategory_id"
     t.float   "value"
@@ -36,14 +36,14 @@ ActiveRecord::Schema.define(version: 20111119180638) do
   end
   
 #course of action, to be finished
-  create_table "coa", force: :cascade do |t|      
+  create_table "coas", force: :cascade do |t|      
     t.string  "coa_index"
   end
   
   
-  create_table "company", force: :cascade do |t|
+  create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.float  "score"
+    t.float  "company_score"
     t.string "description"
   end
 
