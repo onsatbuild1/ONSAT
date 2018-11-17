@@ -1,4 +1,5 @@
 Rottenpotatoes::Application.routes.draw do
+  devise_for :users
   resources :questions do
     collection { post :upload }
   end
