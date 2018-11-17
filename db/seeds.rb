@@ -16,6 +16,7 @@ companies.each do |company|
 end
 
 
+
 categories =[{:description => 'Business', :weight_sum => 0},
              {:description => 'Security', :weight_sum => 0},
              {:description => 'Finance', :weight_sum => 0},]
@@ -141,4 +142,16 @@ csv.each do |row|
     end
   end
 end
+
+questions =Question.all()
+companies =Company.all()
+
+companies.each do |company|
+  questions.each do |question|
+    answer={:company_id =>company.id, :question_id => question.id, :level =>0}
+    Answer.create!(answer)
+  end
+end
+
+
 #
