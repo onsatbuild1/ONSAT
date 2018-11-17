@@ -12,6 +12,19 @@ module HomeHelper
     end
     
     def getAllCompanies
-        return (Company.all).inspect
+        str = ""
+        allCompanies = Company.all
+        for company in allCompanies
+            str+= company.name
+        end
+        return str
+    end
+    
+    def renderCurrentUser
+        if current_user
+            return "Currently signed in as: " + current_user.email
+        else
+            return ""
+        end
     end
 end
