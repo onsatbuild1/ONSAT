@@ -35,6 +35,9 @@ class QuestionsController < ApplicationController
     
     @categories = Category.all
     @categories =@categories.sort { |a,b| a.description <=> b.description }
+    company_name='Good Company'
+    @company = Company.find_by(name: company_name)
+    
   end
 
   def new
@@ -74,5 +77,6 @@ class QuestionsController < ApplicationController
           redirect_to root_url
       end
   end
+  
 
 end 
