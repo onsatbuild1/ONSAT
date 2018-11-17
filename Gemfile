@@ -7,6 +7,7 @@ gem 'rails', '4.2.10'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 gem 'pg'
+gem 'devise'
 
 group :development, :test do
 #  gem 'sqlite3'
