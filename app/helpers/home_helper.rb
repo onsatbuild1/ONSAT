@@ -11,15 +11,6 @@ module HomeHelper
         @devise_mapping ||= Devise.mappings[:user]
     end
     
-    def getAllCompanies
-        str = ""
-        allCompanies = Company.all
-        for company in allCompanies
-            str+= company.name
-        end
-        return str
-    end
-    
     def renderCurrentUser
         if current_user
             return "Currently signed in as: " + current_user.email
