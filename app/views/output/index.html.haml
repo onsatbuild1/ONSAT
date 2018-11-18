@@ -1,1 +1,33 @@
-%p To be done output page
+%h1 Output
+
+- @companies.each_with_index do |company, index|
+  .accordion{:id => "accordionCompany"}
+    .card
+      .card-header{:id => "headingOne"}
+        %h5.mb-0
+          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{index}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+            #{company.name}
+              
+          Will be the label. Ex: Green
+        .collapse{:id => "collapse#{index}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCompany"}
+          - @categories.each_with_index do |category, index|
+            .accordion{:id => "accordionCategory"}
+              .card
+                .card-header{:id => "headingOne"}
+                  %h5.mb-0
+                    %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapseCat#{index}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+                      #{category.description}
+                      
+                    Will be the label. Ex: Green
+                  .collapse{:id => "collapseCat#{index}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
+                    - category.subcategories.order('id ASC').each_with_index do |subcategory, index|
+                      .accordion{:id => "accordionSubCat"}
+                        .card
+                          .card-header{:id => "headingOne"}
+                            %h5.mb-0
+                              %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapseSubCat#{index}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+                                #{subcategory.description}
+                                
+                              Will be the label. Ex: Green
+                            .collapse{:id => "collapseSubCat#{index}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionSubCat"}
+                              hi
