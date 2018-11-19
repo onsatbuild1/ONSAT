@@ -135,6 +135,16 @@ button:hover:before,button:hover:after{
 
 
 /*collapsable stuffs here. will optimize and remove unnecessary stuff later*/
+.arrange-horizontally > * {
+  display: inline-block;
+  text-align: center;
+}
+
+.arrange-vertically > * {
+  display: block;
+  text-align: center;
+}
+
 .fade:not(.show) {
   opacity: 0;
 }
@@ -149,6 +159,61 @@ button:hover:before,button:hover:after{
   overflow: hidden;
   transition: height 0.35s ease;
 }
+/* end collapse */
+
+/* labels for the status of scores */
+.label {
+  color: white;
+  padding: 5px;
+}
+.great {background-color: #4CAF50; width: 100px; text-align: center} /* Green */
+.good {background-color: #2196F3; width: 100px; text-align: center} /* Yellow */
+.ok {background-color: #ff9800; width: 100px; text-align: center} /* Orange */
+.bad {background-color: #f44336; width: 100px; text-align: center} /* Red */
+
+.right {
+  position: absolute;
+  right: 50px;
+  margin-bottom: 15px;
+}
+/* end labels */
+
+/* cirles for validation status*/
+.circle {
+  background-color: #bbb;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: auto;
+}
+
+.validated {background-color: #4CAF50;}
+.unvalidated {background-color: #ff0000;}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+/* end circle */
+
 .panel {
     padding: 0 18px;
     background-color: white;
@@ -417,4 +482,14 @@ button:hover:before,button:hover:after{
 .accordion .card:last-of-type {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.overflow:hover {
+  overflow: visible;
 }
