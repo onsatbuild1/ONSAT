@@ -1,54 +1,58 @@
 -#  This file is app/views/questions/index.html.haml
-%h1 All Questions
-
-= form_tag questions_path, :method => :get do
-  = hidden_field_tag "keyword_sort", true if @keyword_header
-  //= hidden_field_tag ":release_date_sort", true if @date_header
-  //Include: 
-  //- @all_ratings.each do |rating|
-  //  = rating
-  //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
-  //= submit_tag 'Refresh', :id => 'ratings_submit'
-- @categories.each do |category|
-  .accordion{:id => "accordionCategory"}
-    .card
-      .card-header{:id => "headingOne"}
-        %h5.mb-0
-          %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category.description}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
-            #{category.description}
-
-        .collapse{:id => "collapse#{category.description}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
-          - category.subcategories.order('id ASC').each do |subcategory|
-            .accordion{:id => "accordionSubCat"}
-              .card
-                .card-header{:id => "headingOne"}
-                  %h5.mb-0
-                    %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory.id}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
-                      #{subcategory.description}
+-if user_signed_in?
+  %h1 All Questions
   
-                .collapse{:id => "collapse#{subcategory.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionSubCat"}
-                  .card-body
-                    %table#questions
-                      %thead
-                        %tr
-                          %th{:class => @keyword_header}= link_to 'Question Keyword', questions_path(:sort => 'keyword'), :id => 'keyword_header'
-                          %th Answer Score
-                          %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
-                          %th More Info
-                      %tdescription
-                        - subcategory.questions.order('id ASC').each do |question|
+  = form_tag questions_path, :method => :get do
+    = hidden_field_tag "keyword_sort", true if @keyword_header
+    //= hidden_field_tag ":release_date_sort", true if @date_header
+    //Include: 
+    //- @all_ratings.each do |rating|
+    //  = rating
+    //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
+    //= submit_tag 'Refresh', :id => 'ratings_submit'
+  - @categories.each do |category|
+    .accordion{:id => "accordionCategory"}
+      .card
+        .card-header{:id => "headingOne"}
+          %h5.mb-0
+            %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category.description}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+              #{category.description}
+  
+          .collapse{:id => "collapse#{category.description}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
+            - category.subcategories.order('id ASC').each do |subcategory|
+              .accordion{:id => "accordionSubCat"}
+                .card
+                  .card-header{:id => "headingOne"}
+                    %h5.mb-0
+                      %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory.id}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+                        #{subcategory.description}
+    
+                  .collapse{:id => "collapse#{subcategory.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionSubCat"}
+                    .card-body
+                      %table#questions
+                        %thead
                           %tr
-                            %td= question.keyword
-                            %td= select :question, :level, ['0','1','2','3','4', '5', '6']
-                            %td= question.weight
-                            %td= link_to "More about #{question.keyword}", question_path(question)
-
-
-
-= link_to 'Add new question', new_question_path
-
-%h2 Upload
-
-= form_tag upload_questions_path, multipart: true do
-  = file_field_tag :file
-  = submit_tag "Upload"
+                            %th{:class => @keyword_header}= link_to 'Question Keyword', questions_path(:sort => 'keyword'), :id => 'keyword_header'
+                            %th Answer Score
+                            %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
+                            %th More Info
+                        %tdescription
+                          - subcategory.questions.order('id ASC').each do |question|
+                            %tr
+                              %td= question.keyword
+                              %td= select :question, :level, ['0','1','2','3','4', '5', '6']
+                              %td= question.weight
+                              %td= link_to "More about #{question.keyword}", question_path(question)
+  
+  
+  
+  = link_to 'Add new question', new_question_path
+  
+  %h2 Upload
+  
+  = form_tag upload_questions_path, multipart: true do
+    = file_field_tag :file
+    = submit_tag "Upload"
+    
+-else
+  %p You are not logged in
