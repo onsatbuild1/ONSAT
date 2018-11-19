@@ -3,6 +3,7 @@
 
 = form_tag submit_answers_path, :method => :put do
   = hidden_field_tag "keyword_sort", true if @keyword_header
+  = hidden_field_tag :company_id, @company.id
   //= hidden_field_tag ":release_date_sort", true if @date_header
   //Include: 
   //- @all_ratings.each do |rating|
@@ -38,9 +39,9 @@
                         %tdescription
                           - subcategory.questions.order('id ASC').each do |question|
                             %tr
-                              %td= question.keyword
-                              //%td= Answer.find_level(@company.id,question.id)
-                              %td= select_tag Answer.form_string(@company.id,question.id).to_sym, options_for_select( Scale.where(category: category.description[0]).map{|l| [l.level] } ,Answer.find_level(@company.id,question.id))
+                              %td= question.keyword 
+                              //find the answer entry, get the value and look up scale table
+                              %td= select_tag Answer.form_symbol(@company.id,question.id), options_for_select( Scale.where(category: category.description[0]).map{|l| [l.level] } ,Answer.find_level(@company.id,question.id))
                               %td= question.weight
                               %td= link_to "More about #{question.keyword}", question_path(question)
   = submit_tag "Submit"
@@ -50,6 +51,7 @@
 
 %h2 Upload
 
-= form_tag upload_questions_path, multipart: true do
+= form_tag upload_answers_path, multipart: true do
   = file_field_tag :file
+  = hidden_field_tag :company_id, @company.id
   = submit_tag "Upload"

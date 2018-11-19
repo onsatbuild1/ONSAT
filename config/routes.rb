@@ -5,6 +5,7 @@ Rottenpotatoes::Application.routes.draw do
   
   resources :answers do
     collection { put :submit,:validate}
+    collection { post :upload}
   end
   
   resources :home
