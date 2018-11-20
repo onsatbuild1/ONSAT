@@ -12,13 +12,13 @@ class Answer < ActiveRecord::Base
           return answer_str.to_sym
      end
      
-     def self.upload(file,company_id)
+     def self.upload(file)
         #csv=CSV.parse(file.path,headers: true,skip_blanks: true).reject { |row| row.to_hash.values.all?(&:nil?) }
         CSV.foreach(file.path, headers: true) do |row|
             if(!row['index'].nil?)
                 if(!(row['index']<='Z'&&row['index']>='A'))
                     if(row['index']!= '0' )
-                        answer=Answer.find_by(company_id: company_id, question_id:  Question.find_by_index( row['index']).id)
+                        answer=Answer.find_by(company_id: @company.id, question_id:  Question.find_by_index( row['index']).id)
                         answer.update(level: row['level'])
                     end
                 end

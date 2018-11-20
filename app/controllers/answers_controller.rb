@@ -25,7 +25,8 @@ class AnswersController < ApplicationController
 
     def upload
         if params[:file].present?
-            Answer.upload(params[:file],params[:company_id])
+            @company=Company.find(params[:company_id])
+            Answer.upload(params[:file])
             redirect_to questions_path, notice: 'Upload Successful'
         else
             redirect_to questions_path, notice: 'No file chosen'
