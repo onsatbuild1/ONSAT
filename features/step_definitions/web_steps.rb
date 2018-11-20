@@ -27,6 +27,11 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "sel
 
 #====PROJECT
 
+Then(/^I press submit$/) do
+  click_button "Submit"
+end
+
+
 When /^I choose the file and press upload$/ do
   attach_file('file', 'features/test_1023.csv')
   click_button "Upload"
