@@ -15,14 +15,18 @@ class Answer < ActiveRecord::Base
      def self.upload(file,company_id)
         #csv=CSV.parse(file.path,headers: true,skip_blanks: true).reject { |row| row.to_hash.values.all?(&:nil?) }
         CSV.foreach(file.path, headers: true) do |row|
-            if(!row['index'].nil?)
-                if(!(row['index']<='Z'&&row['index']>='A'))
-                    if(row['index']!= '0' )
-                        answer=Answer.find_by(company_id: company_id, question_id:  Question.find_by_index( row['index']).id)
-                        answer.update(level: row['level'])
+            if(row['index'])
+                question=Question.find_by_description(row['description'])
+                    if(question)
+                        answer=Answer.find_by(company_id: company_id, question_id:  question.id)
+                        if(!answer)
+                            return 0
+                        else
+                            answer.update(level: row['level'])
+                        end
                     end
-                end
             end
         end
+        return 1
      end
 end
