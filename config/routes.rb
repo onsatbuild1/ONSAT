@@ -6,6 +6,11 @@ Rottenpotatoes::Application.routes.draw do
     collection { post :upload }
   end
   
+  resources :answers do
+    collection { put :submit,:validate}
+    collection { post :upload}
+  end
+  
   resources :home
   resources :formulae
   resources :output

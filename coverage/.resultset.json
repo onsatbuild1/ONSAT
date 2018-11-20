@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/helpers/application_helper.rb": [
+      "/home/ec2-user/environment/ONSAT/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/helpers/questions_helper.rb": [
+      "/home/ec2-user/environment/ONSAT/app/helpers/questions_helper.rb": [
         1,
         null,
         1,
@@ -13,7 +13,7 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/questions_controller.rb": [
+      "/home/ec2-user/environment/ONSAT/app/controllers/questions_controller.rb": [
         1,
         null,
         1,
@@ -32,7 +32,7 @@
         1,
         1,
         null,
-        1,
+        null,
         null,
         1,
         1,
@@ -49,9 +49,10 @@
         0,
         null,
         null,
-        null,
-        null,
-        null,
+        1,
+        54,
+        1,
+        1,
         null,
         null,
         null,
@@ -86,16 +87,23 @@
         1,
         1,
         1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
         null,
         null,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/application_controller.rb": [
+      "/home/ec2-user/environment/ONSAT/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/models/question.rb": [
+      "/home/ec2-user/environment/ONSAT/app/models/question.rb": [
+        1,
         1,
         1,
         1,
@@ -112,16 +120,76 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/models/subcategory.rb": [
+      "/home/ec2-user/environment/ONSAT/app/models/category.rb": [
+        1,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/models/scale.rb": [
+      "/home/ec2-user/environment/ONSAT/app/models/company.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/models/answer.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/output_controller.rb": [
+      "/home/ec2-user/environment/ONSAT/app/models/score.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/ec2-user/environment/ONSAT/app/models/coa.rb": [
+        0,
+        0
+      ],
+      "/home/ec2-user/environment/ONSAT/app/models/scale.rb": [
+        0,
+        0
+      ],
+      "/home/ec2-user/environment/ONSAT/app/models/subcategory.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/ec2-user/environment/ONSAT/app/controllers/companies_controller.rb": [
+        0,
+        0
+      ],
+      "/home/ec2-user/environment/ONSAT/app/controllers/output_controller.rb": [
         0,
         null,
         0,
@@ -132,7 +200,7 @@
         0,
         0
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/home_controller.rb": [
+      "/home/ec2-user/environment/ONSAT/app/controllers/home_controller.rb": [
         0,
         null,
         0,
@@ -143,40 +211,95 @@
         0,
         0
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/formulae_controller.rb": [
+      "/home/ec2-user/environment/ONSAT/app/controllers/answers_controller.rb": [
+        0,
+        0,
+        0,
         0,
         null,
         0,
         0,
         0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/ec2-user/environment/ONSAT/app/controllers/formulae_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1541455569
+    "timestamp": 1542678334
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/models/scale.rb": [
+      "/home/ec2-user/environment/ONSAT/app/models/company.rb": [
+        1,
+        1,
+        1,
         1,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/models/subcategory.rb": [
+      "/home/ec2-user/environment/ONSAT/app/models/category.rb": [
+        1,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/models/question.rb": [
+      "/home/ec2-user/environment/ONSAT/app/models/scale.rb": [
+        1,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/models/subcategory.rb": [
         1,
         1,
         1,
-        4,
-        24,
-        24,
-        24,
-        24,
+        1,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/models/question.rb": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         0,
         null,
@@ -185,7 +308,37 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/questions_controller.rb": [
+      "/home/ec2-user/environment/ONSAT/app/models/answer.rb": [
+        1,
+        1,
+        1,
+        1,
+        18480,
+        18480,
+        null,
+        null,
+        1,
+        18480,
+        18480,
+        18480,
+        null,
+        null,
+        1,
+        null,
+        3,
+        24,
+        24,
+        24,
+        24,
+        24,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/controllers/questions_controller.rb": [
         1,
         null,
         1,
@@ -199,31 +352,32 @@
         null,
         null,
         1,
-        13,
-        13,
-        13,
-        13,
+        16,
+        16,
+        16,
+        16,
         null,
-        13,
         null,
-        13,
-        13,
         null,
-        0,
+        16,
+        16,
         null,
         0,
         null,
-        null,
-        null,
-        13,
-        0,
-        0,
         0,
         null,
         null,
         null,
+        16,
+        0,
+        0,
+        0,
         null,
         null,
+        16,
+        1056,
+        16,
+        16,
         null,
         null,
         null,
@@ -253,66 +407,126 @@
         0,
         0,
         0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/helpers/questions_helper.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/controllers/answers_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        4627,
+        4627,
+        null,
+        1155,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
         null,
         null,
         1,
         4,
         3,
+        3,
+        null,
+        1,
         null,
         null,
         null
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/helpers/questions_helper.rb": [
+      "/home/ec2-user/environment/ONSAT/app/controllers/home_controller.rb": [
         1,
         null,
         1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/controllers/output_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/controllers/formulae_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        66,
+        null,
+        null
+      ],
+      "/home/ec2-user/environment/ONSAT/app/models/score.rb": [
         0,
-        null,
-        null
+        0,
+        0,
+        0,
+        0
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/home_controller.rb": [
-        1,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        null,
-        null
+      "/home/ec2-user/environment/ONSAT/app/models/coa.rb": [
+        0,
+        0
       ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/output_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/home/ec2-user/environment/LocalTests/ONSAT/app/controllers/formulae_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
+      "/home/ec2-user/environment/ONSAT/app/controllers/companies_controller.rb": [
+        0,
+        0
       ]
     },
-    "timestamp": 1541457915
+    "timestamp": 1542678499
   }
 }

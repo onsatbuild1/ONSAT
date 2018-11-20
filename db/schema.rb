@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20181117195438) do
   
   create_table "answers", force: :cascade do |t|
     t.integer "company_id"
-    t.integer "questions_id"
+    t.integer "question_id"
     t.string  "level"
   end
 
