@@ -52,7 +52,7 @@
                                   - else
                                     = 0
                                 %td= link_to "More about #{question.keyword}", question_path(question)
-                                %td= link_to "PDF"
+                                %td= link_to "PDF", download_answers_path
                                 %td= check_box_tag Answer.form_val(@company.id,question.id), 1, Answer.find_val(@company.id,question.id)
                             = submit_tag "Validate"
 

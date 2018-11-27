@@ -7,8 +7,9 @@ Rottenpotatoes::Application.routes.draw do
   end
   
   resources :answers do
-    collection { put :submit,:validate}
+    collection { put :submit}
     collection { post :upload}
+    collection { get :download}
   end
   
   resources :home
