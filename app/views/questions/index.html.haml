@@ -37,6 +37,8 @@
                               %th Answer Score
                               %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
                               %th More Info
+                              %th PDF
+                              %th Validation Status
                           %tdescription
                             - subcategory.questions.order('id ASC').each do |question|
                               %tr
@@ -44,8 +46,16 @@
                                 %td= question.keyword 
                                 //find the answer entry, get the value and look up scale table
                                 %td= select_tag Answer.form_symbol(@company.id,question.id), options_for_select( Scale.where(category: category.description[0]).map{|l| [l.level] } ,Answer.find_level(@company.id,question.id))
-                                %td= question.weight
+                                %td
+                                  - if Answer.find_val(@company.id,question.id)
+                                    = question.weight
+                                  - else
+                                    = 0
                                 %td= link_to "More about #{question.keyword}", question_path(question)
+                                %td= link_to "PDF"
+                                %td= check_box_tag Answer.form_val(@company.id,question.id), 1, Answer.find_val(@company.id,question.id)
+                            = submit_tag "Validate"
+
     = submit_tag "Submit"
   
   
