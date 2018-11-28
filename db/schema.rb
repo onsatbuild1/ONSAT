@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20181117195438) do
     t.integer "company_id"
     t.integer "question_id"
     t.string  "level"
+    t.boolean "validated",          default: false
   end
 
   create_table "scores", force: :cascade do |t|

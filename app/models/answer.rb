@@ -1,6 +1,18 @@
 class Answer < ActiveRecord::Base
      belongs_to :question
      belongs_to :company
+     
+     def self.find_val(company_id, question_id)
+         answer = Answer.find_by(question_id: question_id, company_id: company_id)
+         return answer.validated
+     end
+
+     def self.form_val(company_id, question_id)
+         answer = Answer.find_by(question_id: question_id, company_id: company_id)
+         answer_val='answer_val'+answer.id.to_s
+         return answer_val.to_sym
+     end
+
      def self.find_level(company_id, question_id)
           answer = Answer.find_by(question_id: question_id, company_id: company_id) 
           return answer.level

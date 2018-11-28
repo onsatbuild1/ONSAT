@@ -4,18 +4,31 @@ class AnswersController < ApplicationController
     end
     
     def submit
-        answers=Answer.where(company_id: params[:company_id])
-        answers.each do |answer|
-            answer_str='answer'+answer.id.to_s
-            if(params[answer_str.to_sym])
-                #print(params[answer.id])
-                if(params[answer_str.to_sym]!=answer.level)
-                    answer.update(level: params[answer_str.to_sym])
+        if(params[:commit]=='Validate')
+            answers=Answer.where(company_id: params[:company_id])
+            answers.each do |answer|
+                answer_val='answer_val'+answer.id.to_s
+                if(params[answer_val.to_sym])
+                    if(params[answer_val.to_sym]!=answer.validated)
+                        answer.update(validated: params[answer_val.to_sym])
+                    end
                 end
-                #redirect_to questions_path, notice: params[answer.id]
             end
+            redirect_to questions_path, notice: 'Validated'
+        else
+            answers=Answer.where(company_id: params[:company_id])
+            answers.each do |answer|
+                answer_str='answer'+answer.id.to_s
+                if(params[answer_str.to_sym])
+                    #print(params[answer.id])
+                    if(params[answer_str.to_sym]!=answer.level)
+                        answer.update(level: params[answer_str.to_sym])
+                    end
+                    #redirect_to questions_path, notice: params[answer.id]
+                end
+            end
+            redirect_to questions_path, notice: 'Submission Pushed'
         end
-        redirect_to questions_path, notice: 'Submission Pushed'
     end
     
     def validate
@@ -34,5 +47,9 @@ class AnswersController < ApplicationController
         else
             redirect_to questions_path, notice: 'No file chosen'
         end
+    end
+    
+    def download
+        send_file "#{Rails.root}/app/assets/sample.pdf"
     end
 end
