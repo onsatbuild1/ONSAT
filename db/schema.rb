@@ -16,32 +16,22 @@ ActiveRecord::Schema.define(version: 20181117195438) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: :cascade do |t|
-    t.string  "description"
-    t.float   "weight_sum"
-  end
-  
   create_table "answers", force: :cascade do |t|
     t.integer "company_id"
     t.integer "question_id"
     t.string  "level"
-    t.boolean "validated",          default: false
+    t.boolean "validated",   default: false
   end
 
-  create_table "scores", force: :cascade do |t|
-    t.integer "company_id"
-    t.integer "subcategory_id"
-    t.float   "value"
-    t.integer "category_id"
-    t.string  "is_category_score" #in case associations don't work
+  create_table "categories", force: :cascade do |t|
+    t.string "description"
+    t.float  "weight_sum"
   end
-  
-#course of action, to be finished
-  create_table "coas", force: :cascade do |t|      
-    t.string  "coa_index"
+
+  create_table "coas", force: :cascade do |t|
+    t.string "coa_index"
   end
-  
-  
+
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.float  "company_score"
@@ -63,10 +53,18 @@ ActiveRecord::Schema.define(version: 20181117195438) do
     t.integer "level"
     t.float   "score"
     t.string  "description"
-    t.string  "category",    limit: 1
+    t.integer "category_id"
   end
 
   create_table "score", force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "subcategory_id"
+    t.float   "value"
+    t.integer "category_id"
+    t.string  "is_category_score"
+  end
+
+  create_table "scores", force: :cascade do |t|
     t.integer "company_id"
     t.integer "subcategory_id"
     t.float   "value"
