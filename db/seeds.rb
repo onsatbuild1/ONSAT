@@ -25,20 +25,20 @@ categories.each do |category|
   Category.create!(category)
 end
 
-scales = [{:level => 0, :score => 0.5, :description => 'BLevel 0',:category =>'B'},
-        {:level => 1, :score => 0.5, :description => 'BLevel 1',:category =>'B'},
-        {:level => 2, :score => 0.5, :description => 'BLevel 2',:category =>'B'},
-        {:level => 3, :score => 0.5, :description => 'BLevel 3',:category =>'B'},
-        {:level => 4, :score => 0.5, :description => 'BLevel 4',:category =>'B'},
-        {:level => 5, :score => 0.5, :description => 'BLevel 5',:category =>'B'},
-        {:level => 6, :score => 0.5, :description => 'BLevel 6',:category =>'B'},
-        {:level => 0, :score => 0.5, :description => 'SLevel 0',:category =>'S'},
-        {:level => 1, :score => 0.5, :description => 'SLevel 1',:category =>'S'},
-        {:level => 2, :score => 0.5, :description => 'SLevel 2',:category =>'S'},
-        {:level => 3, :score => 0.5, :description => 'SLevel 3',:category =>'S'},
-        {:level => 4, :score => 0.5, :description => 'SLevel 4',:category =>'S'},
-        {:level => 5, :score => 0.5, :description => 'SLevel 5',:category =>'S'},
-        {:level => 6, :score => 0.5, :description => 'SLevel 6',:category =>'S'},
+scales = [{:level => 0, :score => 0.5, :description => 'BLevel 0',:category_id => Category.find_by(description: 'Business').id},
+        {:level => 1, :score => 0.5, :description => 'BLevel 1',:category_id => Category.find_by(description: 'Business').id},
+        {:level => 2, :score => 0.5, :description => 'BLevel 2',:category_id => Category.find_by(description: 'Business').id},
+        {:level => 3, :score => 0.5, :description => 'BLevel 3',:category_id => Category.find_by(description: 'Business').id},
+        {:level => 4, :score => 0.5, :description => 'BLevel 4',:category_id => Category.find_by(description: 'Business').id},
+        {:level => 5, :score => 0.5, :description => 'BLevel 5',:category_id => Category.find_by(description: 'Business').id},
+        {:level => 6, :score => 0.5, :description => 'BLevel 6',:category_id => Category.find_by(description: 'Business').id},
+        {:level => 0, :score => 0.5, :description => 'SLevel 0',:category_id => Category.find_by(description: 'Security').id},
+        {:level => 1, :score => 0.5, :description => 'SLevel 1',:category_id => Category.find_by(description: 'Security').id},
+        {:level => 2, :score => 0.5, :description => 'SLevel 2',:category_id => Category.find_by(description: 'Security').id},
+        {:level => 3, :score => 0.5, :description => 'SLevel 3',:category_id => Category.find_by(description: 'Security').id},
+        {:level => 4, :score => 0.5, :description => 'SLevel 4',:category_id => Category.find_by(description: 'Security').id},
+        {:level => 5, :score => 0.5, :description => 'SLevel 5',:category_id => Category.find_by(description: 'Security').id},
+        {:level => 6, :score => 0.5, :description => 'SLevel 6',:category_id => Category.find_by(description: 'Security').id},
   	 ]
 
 scales.each do |scale|
