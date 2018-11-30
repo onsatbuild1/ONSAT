@@ -56,10 +56,12 @@ class OutputController < ApplicationController
                     end
                     
                     if @company_scores["#{company.id}catVal#{category.id}"]
-                            @company_scores["#{company.id}catVal#{category.id}"] = @company_scores["#{company.id}subcatVal#{subcat.id}"]
+                        @company_scores["#{company.id}catVal#{category.id}"] = @company_scores["#{company.id}subcatVal#{subcat.id}"]
                     end
                     
-                    @company_scores["#{company.id}cat#{category.id}"] += @company_scores["#{company.id}subcat#{subcat.id}"]
+                    #the adding for all the category subcategories
+                    valid = (@company_scores["#{company.id}catVal#{category.id}"] ? 1 : 0)
+                    @company_scores["#{company.id}cat#{category.id}"] += (@company_scores["#{company.id}subcat#{subcat.id}"] * valid)
                 end
                 
                 if category.subcategories.size() != 0
@@ -70,7 +72,10 @@ class OutputController < ApplicationController
                     @company_scores["#{company.id}Val"] = @company_scores["#{company.id}catVal#{category.id}"]
                 end
 
-                @company_scores["#{company.id}"] += @company_scores["#{company.id}cat#{category.id}"]
+
+                #the adding for all the company categories
+                valid = (@company_scores["#{company.id}Val"] ? 1 : 0)
+                @company_scores["#{company.id}"] += (@company_scores["#{company.id}cat#{category.id}"] * valid)
             end
             
             
