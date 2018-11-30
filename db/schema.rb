@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20181130200253) do
   create_table "coas", force: :cascade do |t|
     t.string "coa_index"
     t.string "description"
+    t.integer "self_id"
   end
 
   create_table "coas_companies", force: :cascade do |t|

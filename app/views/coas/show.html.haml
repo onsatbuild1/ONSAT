@@ -7,7 +7,13 @@
             Description:
             = @coa.description
         %li
-            Companies
+            Self:
+            %table#self
+            %tr
+                %td= @self.name
+                %td= check_box_tag "companies[#{@self.id}]", 1,@self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{@self.id}"
+        %li
+            All Companies:
             %table#companies
                 - @companies.each do |company|
                     %tr
