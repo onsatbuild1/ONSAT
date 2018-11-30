@@ -15,6 +15,7 @@ Rottenpotatoes::Application.routes.draw do
   resources :home
   resources :formulae
   resources :output
+  resources :coas
   
   # map '/' to be a redirect to '/questions'
   root :to => redirect('/home')

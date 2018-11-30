@@ -1,0 +1,11 @@
+%h1 Create New Scenario
+
+= form_tag coas_path do
+
+  = label :coa, :coa_index, 'coa_index'
+  = text_field :coa, 'coa_index'
+  
+  = label :coa, :description, 'description'
+  = text_field :coa, 'description'
+
+  = submit_tag 'Save Changes'
