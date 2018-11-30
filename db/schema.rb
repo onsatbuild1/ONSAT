@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20181117195438) do
     t.integer  "index"
     t.string   "keyword"
     t.string   "description"
-    t.integer  "answer"
     t.float    "weight"
     t.integer  "subcategory_id"
     t.datetime "created_at"
@@ -54,14 +53,6 @@ ActiveRecord::Schema.define(version: 20181117195438) do
     t.float   "score"
     t.string  "description"
     t.integer "category_id"
-  end
-
-  create_table "score", force: :cascade do |t|
-    t.integer "company_id"
-    t.integer "subcategory_id"
-    t.float   "value"
-    t.integer "category_id"
-    t.string  "is_category_score"
   end
 
   create_table "scores", force: :cascade do |t|

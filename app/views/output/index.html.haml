@@ -1,5 +1,6 @@
 %p
 
+%h1 Output
 - if user_signed_in?
   %p You are logged in
   //company collapsable
@@ -10,21 +11,36 @@
           .arrange-vertically.right
             Status
           
-            - if index == 0
+            - if (@company_scores["#{company.id}"] >= 0.8)
               .label.great
-                .circle.validated.tooltip
-                  .tooltiptext
-                    Validated Data
-            - elsif index == 1
+                - if @company_scores["#{company.id}Val"]
+                  .circle.validated.tooltip
+                    .tooltiptext
+                      Validated Score: #{@company_scores["#{company.id}"]}
+                - else
+                  .circle.unvalidated.tooltip
+                    .tooltiptext
+                      Invalidated Score: #{@company_scores["#{company.id}"]}
+            - elsif ((@company_scores["#{company.id}"] >= 0.5) && (@company_scores["#{company.id}"] < 0.8))
               .label.ok
-                .circle.validated.tooltip
-                  .tooltiptext
-                    Validated Data
+                - if @company_scores["#{company.id}Val"]
+                  .circle.validated.tooltip
+                    .tooltiptext
+                      Validated Score: #{@company_scores["#{company.id}"]}
+                - else
+                  .circle.unvalidated.tooltip
+                    .tooltiptext
+                      Invalidated Score: #{@company_scores["#{company.id}"]}
             - else
               .label.bad
-                .circle.unvalidated.tooltip
-                  .tooltiptext
-                    Invalidated or Missing Info
+                - if @company_scores["#{company.id}Val"]
+                  .circle.validated.tooltip
+                    .tooltiptext
+                      Validated Score: #{@company_scores["#{company.id}"]}
+                - else
+                  .circle.unvalidated.tooltip
+                    .tooltiptext
+                      Invalidated Score: #{@company_scores["#{company.id}"]}
           %h5.mb-0
             .arrange-horizontally
               %button.btn.btn-link.overflow{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{index}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
@@ -40,21 +56,36 @@
                     .arrange-vertically.right
                       Status
                         
-                      - if index == 0
+                      - if (@company_scores["#{company.id}cat#{category.id}"] >= 0.8)
                         .label.great
-                          .circle.validated.tooltip
-                            .tooltiptext
-                              Validated Data
-                      - elsif index == 1
+                          - if @company_scores["#{company.id}catVal#{category.id}"]
+                            .circle.validated.tooltip
+                              .tooltiptext
+                                Validated Score: #{@company_scores["#{company.id}cat#{category.id}"]}
+                          - else
+                            .circle.unvalidated.tooltip
+                              .tooltiptext
+                                Invalidated Score: #{@company_scores["#{company.id}cat#{category.id}"]}
+                      - elsif ((@company_scores["#{company.id}cat#{category.id}"] >= 0.5) && (@company_scores["#{company.id}cat#{category.id}"] < 0.8))
                         .label.ok
-                          .circle.validated.tooltip
-                            .tooltiptext
-                              Validated Data
+                          - if @company_scores["#{company.id}catVal#{category.id}"]
+                            .circle.validated.tooltip
+                              .tooltiptext
+                                Validated Score: #{@company_scores["#{company.id}cat#{category.id}"]}
+                          - else
+                            .circle.unvalidated.tooltip
+                              .tooltiptext
+                                Invalidated Score: #{@company_scores["#{company.id}cat#{category.id}"]}
                       - else
                         .label.bad
-                          .circle.unvalidated.tooltip
-                            .tooltiptext
-                              Invalidated or Missing Info
+                          - if @company_scores["#{company.id}catVal#{category.id}"]
+                            .circle.validated.tooltip
+                              .tooltiptext
+                                Validated Score: #{@company_scores["#{company.id}cat#{category.id}"]}
+                          - else
+                            .circle.unvalidated.tooltip
+                              .tooltiptext
+                                Invalidated Score: #{@company_scores["#{company.id}cat#{category.id}"]}
                     %h5.mb-0
                       .arrange-horizontally
                         %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapseCat#{index}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
@@ -70,21 +101,39 @@
                               .arrange-vertically.right
                                 Status
                               
-                                - if index == 0
+                                - if (@company_scores["#{company.id}subcat#{subcategory.id}"] >= 0.8)
                                   .label.great
-                                    .circle.validated.tooltip
-                                      .tooltiptext
-                                        Validated Data
-                                - elsif index == 1
+                                    - if @company_scores["#{company.id}subcatVal#{subcategory.id}"]
+                                      .circle.validated.tooltip
+                                        .tooltiptext
+                                          Validated Score: #{@company_scores["#{company.id}subcat#{subcategory.id}"]}
+                                    - else
+                                      .circle.unvalidated.tooltip
+                                        .tooltiptext
+                                          Invalidated Score: #{@company_scores["#{company.id}subcat#{subcategory.id}"]}
+                                - elsif ((@company_scores["#{company.id}subcat#{subcategory.id}"] >= 0.5) && (@company_scores["#{company.id}subcat#{subcategory.id}"] < 0.8))
                                   .label.ok
-                                    .circle.validated.tooltip
-                                      .tooltiptext
-                                        Validated Data
+                                    - if @company_scores["#{company.id}subcatVal#{subcategory.id}"]
+                                      .circle.validated.tooltip
+                                        .tooltiptext
+                                          Validated Score: #{@company_scores["#{company.id}subcat#{subcategory.id}"]}
+                                    - else
+                                      .circle.unvalidated.tooltip
+                                        .tooltiptext
+                                          Invalidated Score: #{@company_scores["#{company.id}subcat#{subcategory.id}"]}
                                 - else
                                   .label.bad
-                                    .circle.unvalidated.tooltip
-                                      .tooltiptext
-                                        Invalidated or Missing Info
+                                    - if @company_scores["#{company.id}subcatVal#{subcategory.id}"]
+                                      .circle.validated.tooltip
+                                        .tooltiptext
+                                          Validated Score: #{@company_scores["#{company.id}subcat#{subcategory.id}"]}
+                                    - else
+                                      .circle.unvalidated.tooltip
+                                        .tooltiptext
+                                          Invalidated Score: #{@company_scores["#{company.id}subcat#{subcategory.id}"]}
+                                        
+                                        
+                                        
                               %h5.mb-0
                                 .arrange-horizontally
                                   %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapseSubCat#{index}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
@@ -105,8 +154,7 @@
                                         - subcategory.questions.order('id ASC').each do |question|
                                           %tr
                                             %td= question.keyword
-                                            %td= question.answer
+                                            %td= @company_scores["#{company.id}question#{question.id}"]
                                             %td= question.weight
 - else
   %P You are not logged in
-%h1 Output
