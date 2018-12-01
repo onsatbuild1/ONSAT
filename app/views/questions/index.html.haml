@@ -53,8 +53,16 @@
                                     = 0
                                 %td= link_to "More about #{question.keyword}", question_path(question)
                                 %td= link_to "PDF", download_answers_path
-                                %td= check_box_tag Answer.form_val(@company.id,question.id), 1, Answer.find_val(@company.id,question.id)
-                            = submit_tag "Validate"
+                                %td
+                                  - if current_user.role == 'Validator'
+                                    = check_box_tag Answer.form_val(@company.id,question.id), 1, Answer.find_val(@company.id,question.id)
+                                  - else
+                                    - if Answer.find_val(@company.id,question.id)
+                                      = raw("&#9989")
+                                    - else
+                                      = raw("&#10060")
+                            - if current_user.role == 'Validator'
+                              = submit_tag "Validate"
 
     = submit_tag "Submit"
   
