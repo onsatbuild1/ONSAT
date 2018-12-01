@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
+    has_many :answers
     belongs_to :subcategory
     has_many :companies, :through => :answers
     def self.upload(file)

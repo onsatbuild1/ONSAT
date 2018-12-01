@@ -9,6 +9,11 @@ class CoasController < ApplicationController
     # will render app/views/question/show.<extension> by default
         @self = Company.find( @coa.self_id)
         @companies =Company.all()
+        @coa.companies.each do |company|
+            if(!company.coa_weights.find_by(coa_id: @coa.id).weight)
+                company.coa_weights.find_by(coa_id: @coa.id).update(weight: 0)
+            end
+        end
     end
     
     
@@ -58,6 +63,7 @@ class CoasController < ApplicationController
         if(params[:companies])
             params[:companies].each do |company|
                 @coa.companies << Company.find(company[0])
+                Company.find(company[0]).coa_weights.find_by(coa_id: @coa.id).update(weight: params[:weights][company[0].to_str()])
             end
         end
         redirect_to coa_path(@coa)

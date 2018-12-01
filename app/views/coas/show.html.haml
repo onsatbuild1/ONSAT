@@ -12,13 +12,18 @@
             %tr
                 %td= @self.name
                 %td= check_box_tag "companies[#{@self.id}]", 1,@self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{@self.id}"
+                -if @self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil
+                    %td= text_field_tag "weights[#{@self.id}]", @self.coa_weights.find_by(coa_id: @coa.id).weight
         %li
             All Companies:
             %table#companies
                 - @companies.each do |company|
-                    %tr
-                        %td= company.name
-                        %td= check_box_tag "companies[#{company.id}]", 1,company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{company.id}"
+                    -if not company.id == @self.id
+                        %tr
+                            %td= company.name
+                            %td= check_box_tag "companies[#{company.id}]", 1,company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{company.id}"
+                            -if company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil
+                                %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
     = submit_tag "Submit"
 
                 
