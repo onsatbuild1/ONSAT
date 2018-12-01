@@ -28,15 +28,16 @@ ActiveRecord::Schema.define(version: 20181130200253) do
     t.float  "weight_sum"
   end
 
-  create_table "coas", force: :cascade do |t|
-    t.string "coa_index"
-    t.string "description"
-    t.integer "self_id"
-  end
-
-  create_table "coas_companies", force: :cascade do |t|
+  create_table "coa_weights", force: :cascade do |t|
     t.integer "coa_id"
     t.integer "company_id"
+    t.float   "weight"
+  end
+
+  create_table "coas", force: :cascade do |t|
+    t.string  "coa_index"
+    t.string  "description"
+    t.integer "self_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -60,14 +61,6 @@ ActiveRecord::Schema.define(version: 20181130200253) do
     t.float   "score"
     t.string  "description"
     t.integer "category_id"
-  end
-
-  create_table "score", force: :cascade do |t|
-    t.integer "company_id"
-    t.integer "subcategory_id"
-    t.float   "value"
-    t.integer "category_id"
-    t.string  "is_category_score"
   end
 
   create_table "scores", force: :cascade do |t|
