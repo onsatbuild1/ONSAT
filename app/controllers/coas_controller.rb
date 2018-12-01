@@ -34,7 +34,7 @@ class CoasController < ApplicationController
         @output_nav_class = ''
         @coa_nav_class = 'active'
         
-        @self = Company.find_by(name: "Good Company")
+        @self = Company.find(current_user.company_id)
         @self.sub_contractors.clear
         @self.sub_contractors << Company.find_by(name: "sub Good Company1")
         @self.sub_contractors << Company.find_by(name: "sub Good Company2")
@@ -46,7 +46,7 @@ class CoasController < ApplicationController
     
     
     def new
-        @self = Company.find_by(name: "Good Company")
+        @self = Company.find(current_user.company_id)
     #   default: render 'new' template
     end
     
