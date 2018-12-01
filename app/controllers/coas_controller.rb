@@ -9,19 +9,19 @@ class CoasController < ApplicationController
     # will render app/views/question/show.<extension> by default
         @self = Company.find( @coa.self_id)
         @companies =@self.sub_contractors
-        length = @coa.companies.length
-        number = 1.0
+        @length = @coa.companies.length
+        @number = 1.0
         @coa.companies.each do |company|
             if(!company.coa_weights.find_by(coa_id: @coa.id).weight)
                 
             else
-                number=number-company.coa_weights.find_by(coa_id: @coa.id).weight
-                length =length-1
+                @number=@number-company.coa_weights.find_by(coa_id: @coa.id).weight
+                @length =@length-1
             end
         end
         @coa.companies.each do |company|
             if(!company.coa_weights.find_by(coa_id: @coa.id).weight)
-                company.coa_weights.find_by(coa_id: @coa.id).update(weight: (number/length).round(3))
+                company.coa_weights.find_by(coa_id: @coa.id).update(weight: (@number/@length).round(3))
             end
         end
     end
@@ -58,6 +58,23 @@ class CoasController < ApplicationController
             @coa = Coa.create!(coa_params)
             @coa.update!(self_id: params[:self_id])
             @coa.companies << Company.find(params[:self_id])
+            
+            @length = @coa.companies.length
+            @number = 1.0
+            @coa.companies.each do |company|
+                if(!company.coa_weights.find_by(coa_id: @coa.id).weight)
+                
+                else
+                    @number=@number-company.coa_weights.find_by(coa_id: @coa.id).weight
+                    @length =@length-1
+                end
+            end
+            @coa.companies.each do |company|
+                if(!company.coa_weights.find_by(coa_id: @coa.id).weight)
+                    company.coa_weights.find_by(coa_id: @coa.id).update(weight: (@number/@length).round(3))
+                end
+            end
+            
             flash[:notice] = "#{@coa.coa_index} was successfully created."
             redirect_to coas_path
         end
@@ -80,6 +97,23 @@ class CoasController < ApplicationController
                 if !params[:weights].nil?
                     Company.find(company[0]).coa_weights.find_by(coa_id: @coa.id).update(weight: params[:weights][company[0].to_str()])
                 end
+            end
+        end
+        
+        
+        @length = @coa.companies.length
+        @number = 1.0
+        @coa.companies.each do |company|
+            if(!company.coa_weights.find_by(coa_id: @coa.id).weight)
+                
+            else
+                @number=@number-company.coa_weights.find_by(coa_id: @coa.id).weight
+                @length =@length-1
+            end
+        end
+        @coa.companies.each do |company|
+            if(!company.coa_weights.find_by(coa_id: @coa.id).weight)
+                company.coa_weights.find_by(coa_id: @coa.id).update(weight: (@number/@length).round(3))
             end
         end
         redirect_to coa_path(@coa)
