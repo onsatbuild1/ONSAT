@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
     end
     
     def submit
-        if(params[:commit]=='Validate')
+        if(params[:commit]=='Validate' && current_user.role == 'Validator')
             answers=Answer.where(company_id: params[:company_id])
             answers.each do |answer|
                 answer_val='answer_val'+answer.id.to_s
