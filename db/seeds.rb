@@ -9,7 +9,13 @@
 
 companies=[{:name => 'Good Company', :company_score => 0, :description => 'It\'s Good Company'},
            {:name => 'Bad Company', :company_score => 0, :description => 'It\'s Bad Company'},
-           {:name => 'Ugly Company', :company_score => 0, :description => 'It\'s Ugly Company'},]
+           {:name => 'Ugly Company', :company_score => 0, :description => 'It\'s Ugly Company'},
+           {:name => 'sub Good Company1', :company_score => 0, :description => 'It\'s Good Company'},
+           {:name => 'sub Good Company2', :company_score => 0, :description => 'It\'s Good Company'},
+           {:name => 'sub Bad Company1', :company_score => 0, :description => 'It\'s Bad Company'},
+           {:name => 'sub Bad Company2', :company_score => 0, :description => 'It\'s Bad Company'},
+           {:name => 'sub Ugly Company', :company_score => 0, :description => 'It\'s Ugly Company'},
+           ]
         
 companies.each do |company|
   Company.create!(company)
