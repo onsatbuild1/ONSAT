@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181130200253) do
+ActiveRecord::Schema.define(version: 20181117195438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,14 +47,18 @@ ActiveRecord::Schema.define(version: 20181130200253) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer  "index"
     t.string   "keyword"
+    t.integer  "index"
+    t.integer  "answer"
     t.string   "description"
     t.float    "weight"
     t.integer  "subcategory_id"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "questions", ["keyword"], name: "index_questions_on_keyword", unique: true, using: :btree
 
   create_table "scales", force: :cascade do |t|
     t.integer "level"
@@ -88,10 +92,11 @@ ActiveRecord::Schema.define(version: 20181130200253) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "role"
+    t.integer  "company_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "users", "companies", column: "id"
+  add_foreign_key "users", "companies"
 end
