@@ -16,7 +16,7 @@
         %li{:class => @input_nav_class}= link_to "Input", {:action => 'index', :controller => '/questions'}
         %li{:class => @formulae_nav_class}= link_to "Formulae", {:action => 'index', :controller => '/formulae'}
         %li{:class => @output_nav_class}= link_to "Output", {:action => 'index', :controller => '/output'}
-        %li{:class => @formulae_nav_class}= link_to "Course of Actions", {:action => 'index', :controller => '/coas'}
+        %li{:class => @formulae_nav_class}= link_to "Scenario", {:action => 'index', :controller => '/coas'}
     
     #main
       - if flash[:notice]
