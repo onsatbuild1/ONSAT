@@ -1,15 +1,34 @@
-%table#coas
+-if user_signed_in?
+    %table#coas
 
-    %thead
-        %tr
-            %th Index
-            %th description
-            -@coas.each do |coa|
-                %tr
-                    %td= coa.coa_index
-                    %td= coa.description
-                    %td= link_to "More about #{coa.coa_index}", coa_path(coa)
+        %thead
+            %tr
+                %th Index
+                %th description
+                -@coas.each do |coa|
+                    %tr
+                        %td= coa.coa_index
+                        %td= coa.description
+                        %td= link_to "More about #{coa.coa_index}", coa_path(coa)
 
+    = link_to 'Add new Course of Action', new_coa_path
+    %hr{:align => "left", :width => "50%"}/
 
- 
-= link_to 'Add new Course of Action', new_coa_path
+    -@coas.each do |coa|
+        %h3 Course of Action - Index #{coa.coa_index} #{coa.description}
+        %li
+            Self:
+            = @self.coa_weights.find_by(coa_id: coa.id).weight
+        %li
+            All Companies:
+            %table#companies
+                - @companies.each do |company|
+                    -if not company.id == @self.id
+                        -if company.coa_weights.find_by(coa_id: coa.id) != nil
+                            %tr
+                                %td= company.name
+                                %td= company.coa_weights.find_by(coa_id: coa.id).weight
+        %hr{:align => "left", :width => "30%"}/
+
+- else
+    %p You are not logged in
