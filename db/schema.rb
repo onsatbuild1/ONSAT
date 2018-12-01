@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181117195438) do
+ActiveRecord::Schema.define(version: 20181130200253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,16 @@ ActiveRecord::Schema.define(version: 20181117195438) do
     t.float  "weight_sum"
   end
 
+  create_table "coa_weights", force: :cascade do |t|
+    t.integer "coa_id"
+    t.integer "company_id"
+    t.float   "weight"
+  end
+
   create_table "coas", force: :cascade do |t|
-    t.string "coa_index"
+    t.string  "coa_index"
+    t.string  "description"
+    t.integer "self_id"
   end
 
   create_table "companies", force: :cascade do |t|

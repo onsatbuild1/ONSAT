@@ -1,0 +1,15 @@
+%table#coas
+
+    %thead
+        %tr
+            %th Index
+            %th description
+            -@coas.each do |coa|
+                %tr
+                    %td= coa.coa_index
+                    %td= coa.description
+                    %td= link_to "More about #{coa.coa_index}", coa_path(coa)
+
+
+ 
+= link_to 'Add new scenario', new_coa_path
