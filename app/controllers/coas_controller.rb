@@ -21,7 +21,7 @@ class CoasController < ApplicationController
         end
         @coa.companies.each do |company|
             if(!company.coa_weights.find_by(coa_id: @coa.id).weight)
-                company.coa_weights.find_by(coa_id: @coa.id).update(weight: number/length)
+                company.coa_weights.find_by(coa_id: @coa.id).update(weight: (number/length).round(3))
             end
         end
     end
