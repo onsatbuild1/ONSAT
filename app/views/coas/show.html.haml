@@ -1,5 +1,5 @@
 -# in app/views/movies/show.html.haml
-%h2 Scenario #{@coa.coa_index}
+%h2 Course of Action #{@coa.coa_index}
   
 = form_tag coa_path(@coa.id), :method => :put do
     %ul#details
@@ -33,4 +33,4 @@
 
 %br
 = button_to 'Delete', coa_path(@coa), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to Scenario list', coas_path
+= link_to 'Back to Scenario', coas_path
