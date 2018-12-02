@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181117195438) do
+ActiveRecord::Schema.define(version: 20181201215400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,14 @@ ActiveRecord::Schema.define(version: 20181117195438) do
     t.float   "weight_sum"
     t.integer "category_id"
   end
+
+  create_table "subs", id: false, force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "sub_company_id"
+  end
+
+  add_index "subs", ["company_id", "sub_company_id"], name: "index_subs_on_company_id_and_sub_company_id", unique: true, using: :btree
+  add_index "subs", ["sub_company_id", "company_id"], name: "index_subs_on_sub_company_id_and_company_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
