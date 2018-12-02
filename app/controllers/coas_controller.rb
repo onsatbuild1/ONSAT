@@ -41,9 +41,7 @@ class CoasController < ApplicationController
         @coa_nav_class = 'active'
         
         @self = Company.find(current_user.company_id)
-        @self.sub_contractors.clear
-        @self.sub_contractors << Company.find_by(name: "sub Good Company1")
-        @self.sub_contractors << Company.find_by(name: "sub Good Company2")
+
         
         @coas =@self.self_coas
         @companies = Company.all

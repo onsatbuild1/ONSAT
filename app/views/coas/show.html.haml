@@ -19,11 +19,11 @@
 = form_tag coa_path(@coa.id), :method => :put do
     %ul#details
         %li
-            Description:
+            %b Description:
             = @coa.description
         %li
-            Self:
-            %table#self
+            %b Self:
+            %table#self{:style=>"margin-top: 5px"}
             %tr
                 %td= @self.name
                 %td= check_box_tag "companies[#{@self.id}]", 1,@self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{@self.id}"
@@ -32,9 +32,9 @@
                 -else
                     %td= text_field_tag "weights[#{@self.id}]", 0.0
         %li
-            All Companies:
-            %table#companies
-                - @companies.each do |company|
+            %b Sub Contractors:
+            - @companies.each do |company|
+                %table#subcompanies{:style=>"margin-top: 5px"}
                     -if not company.id == @self.id
                         %tr
                             %td= company.name
@@ -43,6 +43,17 @@
                                 %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
                             -else
                                 %td= text_field_tag "weights[#{company.id}]", 0.0
+                                -if !company.sub_contractors.empty?
+                                    - company.sub_contractors.each do |company|
+                                        %table#subsubcontractors{:style=>"margin: 5px;margin-left: 20px"}
+                                            -if not company.id == @self.id
+                                                %tr
+                                                    %td= company.name
+                                                    %td= check_box_tag "companies[#{company.id}]", 1,company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{company.id}"
+                                                    -if company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil
+                                                        %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
+                                                    -else
+                                                        %td= text_field_tag "weights[#{company.id}]", 0.0
     = submit_tag "Submit"
 
                 
