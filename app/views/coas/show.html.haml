@@ -3,8 +3,8 @@
 
     %thead
         %tr
-            %th Index
-            %th description
+            %th Name
+            %th Description
             -@coas.each do |coa|
                 %tr
                     %td= coa.coa_index
@@ -29,6 +29,8 @@
                 %td= check_box_tag "companies[#{@self.id}]", 1,@self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{@self.id}"
                 -if @self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil
                     %td= text_field_tag "weights[#{@self.id}]", @self.coa_weights.find_by(coa_id: @coa.id).weight
+                -else
+                    %td= text_field_tag "weights[#{@self.id}]", 0.0
         %li
             All Companies:
             %table#companies
@@ -39,6 +41,8 @@
                             %td= check_box_tag "companies[#{company.id}]", 1,company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{company.id}"
                             -if company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil
                                 %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
+                            -else
+                                %td= text_field_tag "weights[#{company.id}]", 0.0
     = submit_tag "Submit"
 
                 

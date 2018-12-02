@@ -4,6 +4,11 @@ class CoasController < ApplicationController
     end
     
     def show
+        @home_nav_class = ''
+        @input_nav_class = '' # Input Tab
+        @formulae_nav_class = ''
+        @output_nav_class = ''
+        @coa_nav_class = 'active'
         id = params[:id] # retrieve question ID from URI route
         @coa = Coa.find(id) # look up question by unique ID
     # will render app/views/question/show.<extension> by default
@@ -47,6 +52,11 @@ class CoasController < ApplicationController
     
     
     def new
+        @home_nav_class = ''
+        @input_nav_class = '' # Input Tab
+        @formulae_nav_class = ''
+        @output_nav_class = ''
+        @coa_nav_class = 'active'
         @self = Company.find(current_user.company_id)
         @coas =@self.self_coas
     #   default: render 'new' template
@@ -95,9 +105,11 @@ class CoasController < ApplicationController
         flash[:notice] = "Course of Action #{@coa.coa_index} was successfully updated."
         if(params[:companies])
             params[:companies].each do |company|
-                @coa.companies << Company.find(company[0])
                 if !params[:weights].nil?
-                    Company.find(company[0]).coa_weights.find_by(coa_id: @coa.id).update(weight: params[:weights][company[0].to_str()])
+                    if params[:weights][company[0].to_str()].to_f()>0
+                        @coa.companies << Company.find(company[0])
+                        Company.find(company[0]).coa_weights.find_by(coa_id: @coa.id).update(weight: params[:weights][company[0].to_str()])
+                    end
                 end
             end
         end
