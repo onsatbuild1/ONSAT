@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
                 end
             end
             redirect_to questions_path, notice: 'Validated'
-        else
+        elsif (params[:commit]=='Submit' && current_user.role == 'Company Representative')
             answers=Answer.where(company_id: params[:company_id])
             answers.each do |answer|
                 answer_str='answer'+answer.id.to_s
