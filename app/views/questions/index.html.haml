@@ -44,13 +44,30 @@
                                 %td= question.index
                                 %td= question.keyword 
                                 //find the answer entry, get the value and look up scale table
-                                %td= select_tag Answer.form_symbol(@company.id,question.id), options_for_select( Scale.where(category_id: category.id).map{|l| [l.level] } ,Answer.find_level(@company.id,question.id))
-                                %td= question.weight
-                                %td= link_to "PDF", download_answers_path
-                                %td= check_box_tag Answer.form_val(@company.id,question.id), 1, Answer.find_val(@company.id,question.id)
-                            = submit_tag "Validate"
 
-    = submit_tag "Submit"
+
+                                %td
+                                  - if  current_user.role == 'Company Representative'
+                                    = select_tag Answer.form_symbol(@company.id,question.id), options_for_select( Scale.where(category_id: category.id).map{|l| [l.level] } ,Answer.find_level(@company.id,question.id))
+                                  - else
+                                    = Answer.find_level(@company.id,question.id)
+                                %td= question.weight
+
+                                %td= link_to "PDF", download_answers_path
+                                %td
+                                  - if current_user.role == 'Validator'
+                                    = check_box_tag Answer.form_val(@company.id,question.id), 1, Answer.find_val(@company.id,question.id)
+                                  - else
+                                    - if Answer.find_val(@company.id,question.id)
+                                      = raw("&#9989")
+                                    - else
+                                      = raw("&#10060")
+                            - if current_user.role == 'Validator'
+                              = submit_tag "Validate"
+                            - if current_user.role == 'Company Representative'
+                              = submit_tag "Submit"
+
+    
   
   
   = link_to 'Add new question', new_question_path
