@@ -8,6 +8,7 @@ class CoasController < ApplicationController
         @coa = Coa.find(id) # look up question by unique ID
     # will render app/views/question/show.<extension> by default
         @self = Company.find( @coa.self_id)
+        @coas =@self.self_coas
         @companies =@self.sub_contractors
         @length = @coa.companies.length
         @number = 1.0
@@ -47,6 +48,7 @@ class CoasController < ApplicationController
     
     def new
         @self = Company.find(current_user.company_id)
+        @coas =@self.self_coas
     #   default: render 'new' template
     end
     
