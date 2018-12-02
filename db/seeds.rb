@@ -8,10 +8,14 @@
 
 
 companies=[{:name => 'Good Company', :company_score => 0, :description => 'It\'s Good Company'},
-           {:name => 'Bad Company', :company_score => 0, :description => 'It\'s Bad Company'},
-           {:name => 'Ugly Company', :company_score => 0, :description => 'It\'s Ugly Company'},
            {:name => 'sub Good Company1', :company_score => 0, :description => 'It\'s Good Company'},
            {:name => 'sub Good Company2', :company_score => 0, :description => 'It\'s Good Company'},
+           {:name => 'sub sub Good Company11', :company_score => 0, :description => 'It\'s Good Company'},
+           {:name => 'sub sub Good Company12', :company_score => 0, :description => 'It\'s Good Company'},
+           {:name => 'sub sub Good Company21', :company_score => 0, :description => 'It\'s Good Company'},
+           {:name => 'sub sub Good Company22', :company_score => 0, :description => 'It\'s Good Company'},
+           {:name => 'Bad Company', :company_score => 0, :description => 'It\'s Bad Company'},
+           {:name => 'Ugly Company', :company_score => 0, :description => 'It\'s Ugly Company'},
            {:name => 'sub Bad Company1', :company_score => 0, :description => 'It\'s Bad Company'},
            {:name => 'sub Bad Company2', :company_score => 0, :description => 'It\'s Bad Company'},
            {:name => 'sub Ugly Company', :company_score => 0, :description => 'It\'s Ugly Company'},
@@ -20,6 +24,20 @@ companies=[{:name => 'Good Company', :company_score => 0, :description => 'It\'s
 companies.each do |company|
   Company.create!(company)
 end
+
+3.times do |k|
+  i=k+1
+  company=Company.find(i)
+  company.sub_contractors << Company.find(i*2)
+  company.sub_contractors << Company.find(i*2+1)
+end
+
+company = Company.find_by(name: 'Bad Company')
+company.sub_contractors << Company.find_by(name: 'sub Bad Company1')
+company.sub_contractors << Company.find_by(name: 'sub Bad Company2')
+
+company = Company.find_by(name: 'Ugly Company')
+company.sub_contractors << Company.find_by(name: 'sub Ugly Company')
 
 
 
