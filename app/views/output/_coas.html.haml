@@ -1,8 +1,29 @@
+:javascript
+    function getCompanyCoaInfo(element) {
+        let coa_id = element.id.match(/\d+/)[0]; // extract coa id from button id
+        fetch(`./output/${coa_id}`)
+          .then(
+            function(response) {
+              if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+              }
+              // append the html response to the right pane
+              response.text().then(function(html) {
+                document.getElementById("coaCompanyInfoScreen").innerHTML = html;
+              });
+            }
+          )
+          .catch(function(err) {
+            console.log('Coa info show error :-S', err);
+          });
+    }
+
 %h2 Courses of Action
 
 .arrange-vertically.scroll
     - @coas.each do |coa|
         .card
             .card-header
-                %button.btn.btn-link= link_to "#{coa.coa_index}", output_path(coa)
+                %button.btn.btn-link{:id => "coa_#{coa.id}", :onclick => "getCompanyCoaInfo(this);"} #{coa.coa_index}
                    
