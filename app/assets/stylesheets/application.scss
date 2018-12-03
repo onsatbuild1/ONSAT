@@ -176,6 +176,18 @@ button:hover:before,button:hover:after{
   right: 50px;
   margin-bottom: 15px;
 }
+
+.left-menu {
+  position: absolute;
+  width: 300;
+  left: 10px;
+  margin: 10px;
+}
+
+.right-screen {
+  margin-left: 310px;
+}
+
 /* end labels */
 
 /* cirles for validation status*/
@@ -492,4 +504,8 @@ button:hover:before,button:hover:after{
 
 .overflow:hover {
   overflow: visible;
+}
+
+.scroll {
+  overflow: auto;
 }

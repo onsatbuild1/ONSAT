@@ -1,0 +1,8 @@
+%h2 Courses of Action
+
+.arrange-vertically.scroll
+    - @coas.each do |coa|
+        .card
+            .card-header
+                %button.btn.btn-link= link_to "#{coa.coa_index}", output_path(coa)
+                   
