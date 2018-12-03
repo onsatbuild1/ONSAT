@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
     end
     
     def submit
-        if(params[:commit]=='Validate')
+        if(params[:commit]=='Validate' && current_user.role == 'Validator')
             answers=Answer.where(company_id: params[:company_id])
             answers.each do |answer|
                 answer_val='answer_val'+answer.id.to_s
@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
                 end
             end
             redirect_to questions_path, notice: 'Validated'
-        else
+        elsif (params[:commit]=='Submit' && current_user.role == 'Company Representative')
             answers=Answer.where(company_id: params[:company_id])
             answers.each do |answer|
                 answer_str='answer'+answer.id.to_s

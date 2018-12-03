@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181130200253) do
+ActiveRecord::Schema.define(version: 20181201215400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,14 +47,18 @@ ActiveRecord::Schema.define(version: 20181130200253) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer  "index"
     t.string   "keyword"
+    t.integer  "index"
+    t.integer  "answer"
     t.string   "description"
     t.float    "weight"
     t.integer  "subcategory_id"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "questions", ["keyword"], name: "index_questions_on_keyword", unique: true, using: :btree
 
   create_table "scales", force: :cascade do |t|
     t.integer "level"
@@ -79,6 +83,14 @@ ActiveRecord::Schema.define(version: 20181130200253) do
     t.integer "category_id"
   end
 
+  create_table "subs", id: false, force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "sub_company_id"
+  end
+
+  add_index "subs", ["company_id", "sub_company_id"], name: "index_subs_on_company_id_and_sub_company_id", unique: true, using: :btree
+  add_index "subs", ["sub_company_id", "company_id"], name: "index_subs_on_sub_company_id_and_company_id", unique: true, using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -88,10 +100,11 @@ ActiveRecord::Schema.define(version: 20181130200253) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "role"
+    t.integer  "company_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "users", "companies", column: "id"
+  add_foreign_key "users", "companies"
 end

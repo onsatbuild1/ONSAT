@@ -16,6 +16,11 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+  %br/
+  = f.label :company_id  
+  = f.select :company_id, options_from_collection_for_select(Company.all, "id", "name")
+  %br/
+  = f.label :role
+  = f.select :role, options_for_select(["Company Representative", "Validator", "Decision Maker"])
   .actions
     = f.submit "Sign up"
-= render "devise/shared/links"

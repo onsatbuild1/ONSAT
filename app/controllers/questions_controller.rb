@@ -35,8 +35,7 @@ class QuestionsController < ApplicationController
     
     @categories = Category.all
     @categories =@categories.sort { |a,b| a.description <=> b.description }
-    company_name='Good Company'
-    @company = Company.find_by(name: company_name)
+    @company = Company.find(current_user.company_id)
     
   end
 
