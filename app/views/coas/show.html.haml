@@ -26,11 +26,8 @@
                                 %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
     = submit_tag "Submit"
 
-                
+            
     
-
-
-
 %br
 = button_to 'Delete', coa_path(@coa), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to Scenario', coas_path
