@@ -1,8 +1,14 @@
 class OutputController < ApplicationController
     
-    CompanyScores = Struct.new(:score, :category_scores, :subcat_scores, :question_scores)
-    
-    
+    def show
+        @companies = Coa.find(params[:id]).companies
+        @categories = Category.all
+        @answers = Answer.all
+        @scales = Scale.all
+        calc_company_score()
+        
+        render :partial => "companies"
+    end
     
     def index
         @home_nav_class = ''
@@ -10,18 +16,16 @@ class OutputController < ApplicationController
         @formulae_nav_class = ''
         @output_nav_class = 'active'
         
-        @companies = Company.all
-        @categories = Category.all
-        @answers = Answer.all
-        @scales = Scale.all
+        @coas = Coa.all
+        
+    end
+    
+    def calc_company_score
+        
+        
         
         @company_scores = Hash.new
         @subcat_answers = []
-        
-        calc_score()
-    end
-    
-    def calc_score
         
         @companies.each do |company|
             @company_scores["#{company.id}"] = 0
