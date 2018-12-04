@@ -1,7 +1,8 @@
 class OutputController < ApplicationController
     
     def show
-        @companies = Coa.find(params[:id]).companies
+        @current_coa = Coa.find(params[:id])
+        @companies = @current_coa.companies
         @categories = Category.all
         @answers = Answer.all
         @scales = Scale.all
