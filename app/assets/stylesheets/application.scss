@@ -111,6 +111,9 @@ button:hover{
   background:#fff;
   color:#1AAB8A;
 }
+button:focus{
+  background-color:#094335;
+}
 button:before,button:after{
   content:'';
   position:absolute;
@@ -176,6 +179,20 @@ button:hover:before,button:hover:after{
   right: 50px;
   margin-bottom: 15px;
 }
+
+.left-menu {
+  position: absolute;
+  width: 300;
+  left: 10px;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.right-screen {
+  margin-left: 310px;
+  margin-top: 20px;
+}
+
 /* end labels */
 
 /* cirles for validation status*/
@@ -494,14 +511,6 @@ button:hover:before,button:hover:after{
   overflow: visible;
 }
 
-.left-menu {
-  position: absolute;
-  position: absolute;
-  width: 300;
-  left: 10px;
-  margin: 10px;
-}
-
-.right-screen {
-  margin-left: 310px;
+.scroll {
+  overflow: auto;
 }
