@@ -14,9 +14,10 @@ module HomeHelper
     def renderCurrentUser
         if current_user
             tempstr = "Currently signed in as: " + current_user.email
-            tempstr += " | Company: " + current_user.company_id.to_s
+            #tempstr += " | Company: " + current_user.company_id.to_s
+            tempstr += " | Company: " + Company.find(current_user.company_id).name
             tempstr += " | Role: " + current_user.role
-            tempstr += current_user.to_s
+            #tempstr += current_user.to_s
             return tempstr
         else
             return ""

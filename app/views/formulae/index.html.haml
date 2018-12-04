@@ -43,15 +43,15 @@
                               %h4 &nbsp + &nbsp #{question.keyword} &nbsp* &nbsp#{question.weight} &nbsp)&nbsp #{"/"} #{subcategory.weight_sum}
                             -else
                               %h4 &nbsp + &nbsp#{question.keyword} &nbsp* &nbsp#{question.weight} 
-  
-  
-  
-  = link_to 'Add new question', new_question_path
-  
-  %h2 Upload
-  
-  = form_tag upload_questions_path, multipart: true do
-    = file_field_tag :file
-    = submit_tag "Upload"
 - else
   %p You are not logged in
+  
+  
+  
+//  = link_to 'Add new question', new_question_path
+  
+//  %h2 Upload
+  
+//  = form_tag upload_questions_path, multipart: true do
+//    = file_field_tag :file
+//    = submit_tag "Upload"
