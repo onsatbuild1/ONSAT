@@ -6,6 +6,7 @@ class OutputController < ApplicationController
         @categories = Category.all
         @answers = Answer.all
         @scales = Scale.all
+        Company.eager_load(:answers)
         calc_company_score()
         
         render :partial => "companies"
@@ -42,7 +43,7 @@ class OutputController < ApplicationController
                     
                     #most inner loop...nasty stuff really...database needs to be better set up
                     subcat.questions.each do |question|
-                        question_answer = @answers.find_by(company_id: company.id, question_id: question.id)
+                        question_answer = company.answers.find_by(question_id: question.id)
                         @subcat_answers << question_answer
                         @company_scores["#{company.id}question#{question.id}"] = category.scales.find_by(level: question_answer.level).score
 

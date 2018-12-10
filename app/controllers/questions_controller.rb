@@ -36,6 +36,7 @@ class QuestionsController < ApplicationController
     @categories = Category.all
     @categories =@categories.sort { |a,b| a.description <=> b.description }
     @company = Company.find(current_user.company_id)
+    Company.eager_load(:answers)
     
   end
 
