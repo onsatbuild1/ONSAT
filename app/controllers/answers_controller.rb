@@ -1,16 +1,15 @@
 class AnswersController < ApplicationController
     def answer_params
-        params.require(:answer).permit(:level)
+        params.require(:answer).permit(:level, :validated)
     end
     
     def submit
         if(params[:commit]=='Validate' && current_user.role == 'Validator')
             answers=Answer.where(company_id: params[:company_id])
             answers.each do |answer|
-                answer_val='answer_val'+answer.id.to_s
-                if(params[answer_val.to_sym])
-                    if(params[answer_val.to_sym]!=answer.validated)
-                        answer.update(validated: params[answer_val.to_sym])
+                if(params[:answer_vals])
+                    if(params[:answer_vals][answer.id.to_s]!=answer.validated)
+                        answer.update(validated: params[:answer_vals][answer.id.to_s])
                     end
                 end
             end
@@ -18,11 +17,10 @@ class AnswersController < ApplicationController
         elsif (params[:commit]=='Submit' && current_user.role == 'Company Representative')
             answers=Answer.where(company_id: params[:company_id])
             answers.each do |answer|
-                answer_str='answer'+answer.id.to_s
-                if(params[answer_str.to_sym])
+                if(params[:answers])
                     #print(params[answer.id])
-                    if(params[answer_str.to_sym]!=answer.level)
-                        answer.update(level: params[answer_str.to_sym])
+                    if(params[:answers][answer.id.to_s]!=answer.level)
+                        answer.update(level: params[:answers][answer.id.to_s],validated: false)
                     end
                     #redirect_to questions_path, notice: params[answer.id]
                 end
