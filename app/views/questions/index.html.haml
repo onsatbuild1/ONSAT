@@ -48,7 +48,7 @@
 
                                 %td
                                   - if  current_user.role == 'Company Representative'
-                                    = select_tag Answer.form_symbol(@company.id,question.id), options_for_select( Scale.where(category_id: category.id).map{|l| [l.level] } ,Answer.find_level(@company.id,question.id))
+                                    = select_tag "answers[#{@company.answers.find_by(question_id: question.id).id}]", options_for_select( category.scales.map{|l| [l.level] } ,Answer.find_level(@company.id,question.id))
                                   - else
                                     = Answer.find_level(@company.id,question.id)
                                 %td= question.weight
@@ -56,7 +56,7 @@
                                 %td= link_to "PDF", download_answers_path
                                 %td
                                   - if current_user.role == 'Validator'
-                                    = check_box_tag Answer.form_val(@company.id,question.id), 1, Answer.find_val(@company.id,question.id)
+                                    = check_box_tag "answer_vals[#{@company.answers.find_by(question_id: question.id).id}]", 1, Answer.find_val(@company.id,question.id)
                                   - else
                                     - if Answer.find_val(@company.id,question.id)
                                       = raw("&#9989")
