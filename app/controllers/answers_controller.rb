@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
     def answer_params
-        params.require(:answer).permit(:level)
+        params.require(:answer).permit(:level, :validated)
     end
     
     def submit
@@ -20,7 +20,7 @@ class AnswersController < ApplicationController
                 if(params[:answers])
                     #print(params[answer.id])
                     if(params[:answers][answer.id.to_s]!=answer.level)
-                        answer.update(level: params[:answers][answer.id.to_s])
+                        answer.update(level: params[:answers][answer.id.to_s],validated: false)
                     end
                     #redirect_to questions_path, notice: params[answer.id]
                 end
