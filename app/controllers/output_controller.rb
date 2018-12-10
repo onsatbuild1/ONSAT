@@ -4,7 +4,6 @@ class OutputController < ApplicationController
         @current_coa = Coa.find(params[:id])
         @companies = @current_coa.companies
         @categories = Category.all
-        @answers = Answer.all
         @scales = Scale.all
         Company.eager_load(:answers)
         calc_company_score()

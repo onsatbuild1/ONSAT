@@ -9,6 +9,7 @@ gem 'rails', '4.2.10'
 gem 'pg'
 gem 'devise'
 
+
 group :development, :test do
 #  gem 'sqlite3'
   gem 'byebug'
