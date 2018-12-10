@@ -1,10 +1,11 @@
-%p Home tab Splash screen home page
+%p Home tab home page
 
 = renderCurrentUser
 
-= link_to('Logout', destroy_user_session_path, method: :delete)
+-if user_signed_in?
+  = link_to("\nLogout", destroy_user_session_path, method: :delete)
 
-- if !user_signed_in?
+- else
   %h2 Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
