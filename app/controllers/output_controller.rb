@@ -44,7 +44,7 @@ class OutputController < ApplicationController
                     subcat.questions.each do |question|
                         question_answer = @answers.find_by(company_id: company.id, question_id: question.id)
                         @subcat_answers << question_answer
-                        @company_scores["#{company.id}question#{question.id}"] = @scales.find_by(level: question_answer.level).score
+                        @company_scores["#{company.id}question#{question.id}"] = category.scales.find_by(level: question_answer.level).score
 
                         if @company_scores["#{company.id}subcatVal#{subcat.id}"]
                             @company_scores["#{company.id}subcatVal#{subcat.id}"] = question_answer.validated
