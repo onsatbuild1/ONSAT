@@ -47,18 +47,19 @@
 
 
                                 %td
+                                  - @answer= @company.answers.find_by(question_id: question.id)
                                   - if  current_user.role == 'Company Representative'
-                                    = select_tag "answers[#{@company.answers.find_by(question_id: question.id).id}]", options_for_select( category.scales.map{|l| [l.level] } ,@company.answers.find_by(question_id: question.id).level)
+                                    = select_tag "answers[#{@answer.id}]", options_for_select( category.scales.map{|l| [l.level] } ,@answer.level)
                                   - else
-                                    = Answer.find_level(@company.id,question.id)
+                                    = @answer.level
                                 %td= question.weight
 
                                 %td= link_to "PDF", download_answers_path
                                 %td
                                   - if current_user.role == 'Validator'
-                                    = check_box_tag "answer_vals[#{@company.answers.find_by(question_id: question.id).id}]", 1, @company.answers.find_by(question_id: question.id).validated
+                                    = check_box_tag "answer_vals[#{@answer.id}]", 1, @answer.validated
                                   - else
-                                    - if Answer.find_val(@company.id,question.id)
+                                    - if @answer.validated
                                       = raw("&#9989")
                                     - else
                                       = raw("&#10060")
