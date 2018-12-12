@@ -1,25 +1,84 @@
--# in app/views/questions/show.html.haml
+-if user_signed_in?
+  %h1 All Questions for #{@company.name}
+  
+  = form_tag submit_answers_path, :method => :put do
+    = hidden_field_tag "keyword_sort", true if @keyword_header
+    = hidden_field_tag :company_id, @company.id
+    //= hidden_field_tag ":release_date_sort", true if @date_header
+    //Include: 
+    //- @all_ratings.each do |rating|
+    //  = rating
+    //  = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
+    //= submit_tag 'Refresh', :id => 'ratings_submit'
+    - @categories.each do |category|
+      .accordion{:id => "accordionCategory"}
+        .card
+          .card-header{:id => "headingOne"}
+            %h5.mb-0
+              %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{category.description}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+                #{category.description}
+  
+            .collapse{:id => "collapse#{category.description}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCategory"}
+              - category.subcategories.order('id ASC').each do |subcategory|
+                .accordion{:id => "accordionSubCat"}
+                  .card
+                    .card-header{:id => "headingOne"}
+                      %h5.mb-0
+                        %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{subcategory.id}", "aria-hidden" => "true", "aria-controls" => "collapseOne"}
+                          #{subcategory.description}
+    
+                    .collapse{:id => "collapse#{subcategory.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionSubCat"}
+                      .card-body
+                        %table#questions
+                          %thead
+                            %tr
+                              %th Index
+                              %th{:class => @keyword_header}= link_to 'Question Keyword', questions_path(:sort => 'keyword'), :id => 'keyword_header'
+                              %th Answer Score
+                              %th{:class => @weight_header}= link_to 'Weight', questions_path(:sort => 'weight'), :id => 'weight_header'
+                              %th PDF
+                              %th Validation Status
+                          %tdescription
+                            - subcategory.questions.order('id ASC').each do |question|
+                              %tr
+                                %td= question.index
+                                %td= question.keyword 
+                                //find the answer entry, get the value and look up scale table
 
-%h2 Details about #{@question.keyword}
 
-%ul#details
-  %li
-    Question Keyword:
-    = @question.keyword
-  //%li
-  //  Question Index:
-  //  = @question.index
-  %li
-    Question Weight:
-    = @question.weight
-  %li
-    Question Answer:
-    = @question.answer
+                                %td
+                                  - @answer= @company.answers.find_by(question_id: question.id)
+                                  - if  current_user.role == 'Company Representative'
+                                    = select_tag "answers[#{@answer.id}]", options_for_select( category.scales.map{|l| [l.level] } ,@answer.level)
+                                  - else
+                                    = @answer.level
+                                %td= question.weight
 
-%h3 Description:
-
-%p#description= @question.description
-
-= link_to 'Edit', edit_question_path(@question)
-= button_to 'Delete', question_path(@question), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to questions list', questions_path
+                                %td= link_to "PDF", download_answers_path
+                                %td
+                                  - if current_user.role == 'Validator'
+                                    = check_box_tag "answer_vals[#{@answer.id}]", 1, @answer.validated
+                                  - else
+                                    - if @answer.validated
+                                      = raw("&#9989")
+                                    - else
+                                      = raw("&#10060")
+                            - if current_user.role == 'Validator'
+                              = submit_tag "Validate"
+                            - if current_user.role == 'Company Representative'
+                              = submit_tag "Submit"
+  
+  %h2 Upload
+  
+  = form_tag upload_answers_path, multipart: true do
+    = file_field_tag :file
+    = hidden_field_tag :company_id, @company.id
+    = submit_tag "Upload"
+  
+  - if current_user.role == 'Validator'
+    .center-on-page-horizontally.quarter-bottom
+      .card
+        .card-header.text-center
+          = link_to "Select different Company", questions_path
+-else
+  %p You are not logged in

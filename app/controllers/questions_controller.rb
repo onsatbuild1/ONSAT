@@ -10,15 +10,6 @@ class QuestionsController < ApplicationController
     id = params[:id] # retrieve question ID from URI route
     @question = Question.find(id) # look up question by unique ID
     # will render app/views/question/show.<extension> by default
-  end
-
-  def index
-    @home_nav_class = ''
-    @input_nav_class = 'active' # Input Tab
-    @formulae_nav_class = ''
-    @output_nav_class = ''
-    
-    #@subcategories = Subcategory.all
     
     sort = params[:sort] || session[:sort]
     case sort
@@ -37,10 +28,20 @@ class QuestionsController < ApplicationController
     
     @categories = Category.all
     @categories =@categories.sort { |a,b| a.description <=> b.description }
-    @company = Company.find(current_user.company_id)
-    #Company.eager_load(:answers)
-    #@answers=@company.answers
+    @company = Company.find(params[:id])
+  end
+
+  def index
+    @home_nav_class = ''
+    @input_nav_class = 'active' # Input Tab
+    @formulae_nav_class = ''
+    @output_nav_class = ''
     
+    if current_user.role == 'Company Representative'
+      redirect_to question_path(current_user.company_id)
+    end
+    
+    @companies = Company.all
   end
 
   def new
