@@ -135,7 +135,43 @@ button:hover:before,button:hover:after{
   transition:800ms ease all;
 }
 
+/* scroll box stuff*/
+.center-on-page-horizontally {
+  left: 50%;
+  //transform: translate(-50%,-50%);
+}
 
+.center-on-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.text-center {
+  text-align: center;
+}
+.vertical-menu {
+  width: 400px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.vertical-menu a {
+  background-color: #1AAB8A;
+  color: #fff;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #094335;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
 /*collapsable stuffs here. will optimize and remove unnecessary stuff later*/
 .arrange-horizontally > * {
@@ -193,6 +229,21 @@ button:hover:before,button:hover:after{
   margin-top: 20px;
 }
 
+.quarter-top {
+  top: 25%;
+}
+
+.third-top {
+  top: 33%;
+}
+
+.half-top {
+  top: 50%;
+}
+
+.quarter-bottom{
+  margin-bottom: 50px;
+}
 /* end labels */
 
 /* cirles for validation status*/
@@ -236,6 +287,9 @@ button:hover:before,button:hover:after{
     background-color: white;
     display: none;
     overflow: hidden;
+}
+.grey {
+  background-color: #ccc;
 }
 .card {
   position: relative;
