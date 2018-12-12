@@ -136,8 +136,10 @@ button:hover:before,button:hover:after{
 }
 
 /* scroll box stuff*/
-.center-on-page-horizontally {
-  left: 50%;
+.center-on-page-horizontally-bottom{
+  position: absolute;
+  left: 45%;
+  bottom: 10%;
   //transform: translate(-50%,-50%);
 }
 
@@ -239,10 +241,6 @@ button:hover:before,button:hover:after{
 
 .half-top {
   top: 50%;
-}
-
-.quarter-bottom{
-  margin-bottom: 50px;
 }
 /* end labels */
 

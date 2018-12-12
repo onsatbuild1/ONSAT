@@ -68,16 +68,17 @@
                             - if current_user.role == 'Company Representative'
                               = submit_tag "Submit"
   
-  %h2 Upload
-  
-  = form_tag upload_answers_path, multipart: true do
-    = file_field_tag :file
-    = hidden_field_tag :company_id, @company.id
-    = submit_tag "Upload"
+  - if current_user.role == 'Company Representative'
+    %h2 Upload
+    
+    = form_tag upload_answers_path, multipart: true do
+      = file_field_tag :file
+      = hidden_field_tag :company_id, @company.id
+      = submit_tag "Upload"
   
   - if current_user.role == 'Validator'
-    .center-on-page-horizontally.quarter-bottom
-      .card
+    .center-on-page-horizontally-bottom
+      .card.bottom
         .card-header.text-center
           = link_to "Select different Company", questions_path
 -else
