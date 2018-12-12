@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
                     end
                 end
             end
-            redirect_to questions_path, notice: 'Validated'
+            redirect_to question_path(params[:company_id]), notice: 'Validated'
         elsif (params[:commit]=='Submit' && current_user.role == 'Company Representative')
             answers=Answer.where(company_id: params[:company_id])
             answers.each do |answer|
@@ -22,15 +22,14 @@ class AnswersController < ApplicationController
                     if(params[:answers][answer.id.to_s]!=answer.level)
                         answer.update(level: params[:answers][answer.id.to_s],validated: false)
                     end
-                    #redirect_to questions_path, notice: params[answer.id]
                 end
             end
-            redirect_to questions_path, notice: 'Submission Pushed'
+            redirect_to question_path(params[:company_id]), notice: 'Submission Pushed'
         end
     end
     
     def validate
-        redirect_to questions_path, notice: 'Submission Pushed'
+        redirect_to question_path(params[:company_id]), notice: 'Submission Pushed'
     end
 
 
@@ -38,12 +37,12 @@ class AnswersController < ApplicationController
         if params[:file].present?
             file_flag=Answer.upload(params[:file],params[:company_id])
             if(file_flag==1)
-                redirect_to questions_path, notice: 'Upload Successful'
+                redirect_to question_path(params[:company_id]), notice: 'Upload Successful'
             else
-                redirect_to questions_path, notice: 'File Invalid'
+                redirect_to question_path(params[:company_id]), notice: 'File Invalid'
             end
         else
-            redirect_to questions_path, notice: 'No file chosen'
+            redirect_to question_path(params[:company_id]), notice: 'No file chosen'
         end
     end
     
