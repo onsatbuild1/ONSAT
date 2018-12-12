@@ -137,10 +137,9 @@ button:hover:before,button:hover:after{
 
 /* scroll box stuff*/
 .center-on-page-horizontally-bottom{
-  position: absolute;
+  position: fixed;
   left: 45%;
-  bottom: 10%;
-  //transform: translate(-50%,-50%);
+  margin-bottom: 0%;
 }
 
 .center-on-page {
