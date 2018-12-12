@@ -2,10 +2,16 @@
 
 
 %h1 Output
-- if user_signed_in?
+- if user_signed_in? and current_user.role == "Decision Maker"
     %p You are logged in
+- elsif user_signed_in? and current_user.role != "Decision Maker"
+    %p You do not have permission to view the Outputs
 - else
     %P You are not logged in
+    
+-# The above code is redundant now that we have "before" filters setup
+-# To prevent people from looking at things they shouldn't
+-# The before filters are defined in application_controller.rb
 
 .arrange.horizontally
     .left-menu
