@@ -1,72 +1,83 @@
 -# in app/views/movies/show.html.haml
-%table#coas
-
-    %thead
-        %tr
-            %th Name
-            %th Description
-            -@coas.each do |coa|
-                %tr
-                    %td= coa.coa_index
-                    %td= coa.description
-                    %td= link_to "Modify", coa_path(coa)
-
-= link_to 'Add new Course of Action', new_coa_path
-%hr{:align => "left", :width => "50%"}/
-
-%h2 Course of Action #{@coa.coa_index}
-  
-= form_tag coa_path(@coa.id), :method => :put do
-    %div#details
-        
-        %div.left-menu
-            %b Self:
-            %table#self{:style=>"margin-top: 5px"}
-            %tr
-                %td= @self.name
-                %td= check_box_tag "companies[#{@self.id}]", 1,@self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{@self.id}"
-                -if @self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil
-                    %td= text_field_tag "weights[#{@self.id}]", @self.coa_weights.find_by(coa_id: @coa.id).weight
-                -else
-                    %td= text_field_tag "weights[#{@self.id}]", 0.0
-        %div.right-screen
-            %b Sub Contractors:
-            - @companies.each do |company|
-                .accordion{:id => "accordionCompany"}
-                    .card
-                        .card-header{:id => "headingOne"}
-                            %h5.mb-0
-                                %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{company.id}", "aria-hidden" => "true", "aria-controls" => "collapseOne"} #{company.name}
-                            .collapse{:id => "collapse#{company.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCompany"}
-                                .card-body
-                                    %table#subcompanies{:style=>"margin-top: 5px"}
-                                    -if not company.id == @self.id
-                                        %tr
-                                            %td= company.name
-                                            %td= check_box_tag "companies[#{company.id}]", 1,company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{company.id}"
-                                            -if company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil
-                                                %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
-                                            -else
-                                                %td= text_field_tag "weights[#{company.id}]", 0.0
-                                            -if !company.sub_contractors.empty?
-                                                - company.sub_contractors.each do |company|
-                                                    %table#subsubcontractors{:style=>"margin: 5px;margin-left: 20px"}
-                                                        -if not company.id == @self.id
-                                                            %tr
-                                                                %td= company.name
-                                                                %td= check_box_tag "companies[#{company.id}]", 1,company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{company.id}"
-                                                                -if company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil
-                                                                    %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
-                                                                -else
-                                                                    %td= text_field_tag "weights[#{company.id}]", 0.0
-    = submit_tag "Submit"
-
-                
+-if user_signed_in? and current_user.role == "Decision Maker"
+    -#
+        (comment) This if-condition is redundant with the before-filters
+        defined in application_controller
+        and used in coas_controller
+        This if-condition has been left for redundancy
+        in case somehow, it's needed
+    %table#coas
     
+        %thead
+            %tr
+                %th Name
+                %th Description
+                -@coas.each do |coa|
+                    %tr
+                        %td= coa.coa_index
+                        %td= coa.description
+                        %td= link_to "Modify", coa_path(coa)
+    
+    = link_to 'Add new Course of Action', new_coa_path
+    %hr{:align => "left", :width => "50%"}/
+    
+    %h2 Course of Action #{@coa.coa_index}
+      
+    = form_tag coa_path(@coa.id), :method => :put do
+        %div#details
+            
+            %div.left-menu
+                %b Self:
+                %table#self{:style=>"margin-top: 5px"}
+                %tr
+                    %td= @self.name
+                    %td= check_box_tag "companies[#{@self.id}]", 1,@self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{@self.id}"
+                    -if @self.coas.exists? && @self.coas.find_by(id: @coa.id)!=nil
+                        %td= text_field_tag "weights[#{@self.id}]", @self.coa_weights.find_by(coa_id: @coa.id).weight
+                    -else
+                        %td= text_field_tag "weights[#{@self.id}]", 0.0
+            %div.right-screen
+                %b Sub Contractors:
+                - @companies.each do |company|
+                    .accordion{:id => "accordionCompany"}
+                        .card
+                            .card-header{:id => "headingOne"}
+                                %h5.mb-0
+                                    %button.btn.btn-link{"type" => "button", "data-toggle" => "collapse", "data-target" => "#collapse#{company.id}", "aria-hidden" => "true", "aria-controls" => "collapseOne"} #{company.name}
+                                .collapse{:id => "collapse#{company.id}", "aria-labelledby" => "headingOne", "data-parent" => "#accordionCompany"}
+                                    .card-body
+                                        %table#subcompanies{:style=>"margin-top: 5px"}
+                                        -if not company.id == @self.id
+                                            %tr
+                                                %td= company.name
+                                                %td= check_box_tag "companies[#{company.id}]", 1,company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{company.id}"
+                                                -if company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil
+                                                    %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
+                                                -else
+                                                    %td= text_field_tag "weights[#{company.id}]", 0.0
+                                                -if !company.sub_contractors.empty?
+                                                    - company.sub_contractors.each do |company|
+                                                        %table#subsubcontractors{:style=>"margin: 5px;margin-left: 20px"}
+                                                            -if not company.id == @self.id
+                                                                %tr
+                                                                    %td= company.name
+                                                                    %td= check_box_tag "companies[#{company.id}]", 1,company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil,:id => "companies_#{company.id}"
+                                                                    -if company.coas.exists? && company.coas.find_by(id: @coa.id)!=nil
+                                                                        %td= text_field_tag "weights[#{company.id}]", company.coa_weights.find_by(coa_id: @coa.id).weight
+                                                                    -else
+                                                                        %td= text_field_tag "weights[#{company.id}]", 0.0
+        = submit_tag "Submit"
+    
+                    
+        
+    
+    
+    
+    %br
+    = button_to 'Delete', coa_path(@coa), :method => :delete, :confirm => 'Are you sure?'
+    %hr{:align => "left", :width => "50%"}/
+    = link_to 'Back', coas_path
+-elsif user_signed_in? and current_user.role != "Decision Maker"
 
-
-
-%br
-= button_to 'Delete', coa_path(@coa), :method => :delete, :confirm => 'Are you sure?'
-%hr{:align => "left", :width => "50%"}/
-= link_to 'Back', coas_path
+-else
+    %p You are not signed in

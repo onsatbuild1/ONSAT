@@ -1,4 +1,10 @@
--if user_signed_in?
+-if user_signed_in? and current_user.role == "Decision Maker"
+    -#
+        (comment) This if-condition is redundant with the before-filters
+        defined in application_controller
+        and used in coas_controller
+        This if-condition has been left for redundancy
+        in case somehow, it's needed
     %table#coas
 
         %thead
@@ -15,7 +21,8 @@
     %hr{:align => "left", :width => "50%"}/
 
 
-
+- elsif user_signed_in? and current_user.role != "Decision Maker"
+    %p You do not have permission to view Courses of Action
 
 - else
     %p You are not logged in

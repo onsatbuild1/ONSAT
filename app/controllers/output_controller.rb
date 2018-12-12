@@ -1,4 +1,6 @@
 class OutputController < ApplicationController
+    before_action :requireDecisionMaker
+    #requireDecisionMaker is defined in application_controller.rb
     
     def show
         @current_coa = Coa.find(params[:id])

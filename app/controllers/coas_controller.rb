@@ -1,8 +1,11 @@
 class CoasController < ApplicationController
+    before_action :requireDecisionMaker
+    #requireDecisionMaker is defined in application_controller.rb
+    
     def coa_params
         params.require(:coa).permit(:coa_index, :description)
     end
-    
+
     def show
         @home_nav_class = ''
         @input_nav_class = '' # Input Tab
@@ -11,7 +14,7 @@ class CoasController < ApplicationController
         @coa_nav_class = 'active'
         id = params[:id] # retrieve question ID from URI route
         @coa = Coa.find(id) # look up question by unique ID
-    # will render app/views/question/show.<extension> by default
+        # will render app/views/question/show.<extension> by default
         @self = Company.find( @coa.self_id)
         @coas =@self.self_coas
         @companies =@self.sub_contractors
@@ -31,8 +34,7 @@ class CoasController < ApplicationController
             end
         end
     end
-    
-    
+
     def index
         @home_nav_class = ''
         @input_nav_class = '' # Input Tab
@@ -41,11 +43,8 @@ class CoasController < ApplicationController
         @coa_nav_class = 'active'
         
         @self = Company.find(current_user.company_id)
-
-        
         @coas =@self.self_coas
         @companies = Company.all
-        
     end
     
     
@@ -55,9 +54,11 @@ class CoasController < ApplicationController
         @formulae_nav_class = ''
         @output_nav_class = ''
         @coa_nav_class = 'active'
+
         @self = Company.find(current_user.company_id)
         @coas =@self.self_coas
-    #   default: render 'new' template
+        #default: render 'new' template
+       
     end
     
     def create
@@ -111,8 +112,7 @@ class CoasController < ApplicationController
                 end
             end
         end
-        
-        
+
         @length = @coa.companies.length
         @number = 1.0
         @coa.companies.each do |company|
@@ -129,5 +129,6 @@ class CoasController < ApplicationController
             end
         end
         redirect_to coa_path(@coa)
+        
     end
 end

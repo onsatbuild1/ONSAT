@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
   
+  before_action :requireCompRepOrValidator
+  
   def question_params
     params.require(:question).permit(:keyword, :subcategory_id, :index, :weight, :description)
   end
