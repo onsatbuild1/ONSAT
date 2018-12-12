@@ -7,6 +7,10 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @home_nav_class = ''
+    @input_nav_class = 'active' # Input Tab
+    @formulae_nav_class = ''
+    @output_nav_class = ''
     id = params[:id] # retrieve question ID from URI route
     @question = Question.find(id) # look up question by unique ID
     # will render app/views/question/show.<extension> by default
